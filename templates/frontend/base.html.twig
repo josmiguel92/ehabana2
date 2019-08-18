@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        {% block AlternateLang %}
+            <link rel="alternate" hreflang="en" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
+            <link rel="alternate" hreflang="es" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'es' } )) }}" />
+            <link rel="alternate" hreflang="fr" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'fr' } )) }}" />
+            <link rel="alternate" hreflang="x-default" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
+        {% endblock %}
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <meta name="theme-color" content="#378203">
+
+        {# Facebook and Twitter tags #}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@ElizaldeHabana" />
+        <meta name="twitter:creator" content="@ElizaldeHabana" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="{% trans %}meta.title{% endtrans %}" />
+        <meta property="og:description" content="{% trans %}meta.description{% endtrans %}" />
+        <meta property="og:image" content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
+
+        <meta property="keyword" content="{% trans %}meta.keywords{% endtrans %}">
+        <meta name="description" content="{% trans %}meta.description{% endtrans %}" />
+        <link rel="canonical" href="{{ main_app_url }}"/>
+
+        {# Restaurant #}
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org/",
+                "@type": "Restaurant",
+                "name": "Elizalde bar-Restaurante",
+                "image": "https://www.yourwebsite.com/logo.jpg",
+                "acceptsReservations": "Yes",
+                "menu": "{{ main_app_url }}",
+                "servesCuisine": "Seafood, International",
+                "openingHours": "12:00-00:00",
+                "priceRange": "$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Empedrado street 521, between Monserrate and Villegas street",
+                    "addressLocality": "Old Havana",
+                    "addressRegion": "Havana, Cuba",
+                    "postalCode": "10100"
+                },
+                "telephone": "+5378672157",
+                "url": "{{ main_app_url }}",
+                "hasMap": "https://goo.gl/maps/1rfEAEoucKLi4tCD9"
+            }
+        </script>
+
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
+
+        <title>
+            {% trans %}meta.title{% endtrans %}
+        </title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('vendors/themify-icons/themify-icons.css') }}">
+            <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.theme.default.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('vendors/Magnific-Popup/magnific-popup.css') }}">
+
+
+            <script src="{{ asset('assets/vendor.js') }}"></script>
+            <script src="{{ asset('assets/0.js.js') }}"></script>
+
+            {#<link rel="stylesheet" href="{{ asset('styles/frontend.css') }}">#}
+        {% endblock %}
+
+        {% block javascripts_defer %}{% endblock %}
+
+        {% if app.environment == 'prod' %}
+            {% block trackingcodes %}
+                {{ include('frontend/components/global/_footer.html.twig') }}
+            {% endblock %}
+        {% endif %}
+        
+    </head>
+
+    <body>
+
+        {% include('frontend/components/global/_header.html.twig') with {'_route':app.request.get('_route')} %}
+
+        {% block body %}{% endblock %}
+
+        {{ include('frontend/components/global/_footer.html.twig') }}
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

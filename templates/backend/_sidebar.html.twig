@@ -1,0 +1,53 @@
+<!-- sidebar menu area start -->
+<div class="sidebar-menu">
+    <div class="sidebar-header">
+        <div class="logo">
+            <a href="{{ path('frontend') }}"><img src="{{ asset('img/logo.png') }}" alt="logo"></a>
+        </div>
+    </div>
+    <div class="main-menu">
+        <div class="menu-inner">
+            <nav>
+                <ul class="metismenu" id="menu">
+                    <li {% if pagename == 'dashboard' %}class="active"{% endif %}>
+                        <a href="{{ path('backend_dashboard') }}"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                    </li>
+
+                    <li {% if pagename == 'booking' %}class="active"{% endif %}>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i>
+                            <span>Bookings</span></a>
+                        <ul class="collapse">
+                            <li><a href="{{ path('booking_index') }}">View all</a></li>
+                            <li><a href="{{ path('booking_index') }}">Calendar</a></li>
+                            <li><a href="{{ path('backend_booking_new') }}">Add new</a></li>
+
+
+                        </ul>
+                    </li>
+
+                    <li><a href="invoice.html"><i class="ti-receipt"></i> <span>Invoice Summary</span></a></li>
+
+                    <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
+                            <span>Error</span></a>
+                        <ul class="collapse">
+                            <li><a href="#">Logs</a></li>
+                            <li><a href="#" aria-expanded="true">Error pages</a>
+                                {% if app.environment == 'dev' %}
+                                <ul class="collapse">
+                                    <li><a href="{{ path('_twig_error_test', {'code': 404}) }}">Error 404</a></li>
+                                    <li><a href="{{ path('_twig_error_test', {'code': 403}) }}">Error 403</a></li>
+                                    <li><a href="{{ path('_twig_error_test', {'code': 500}) }}">Error 500</a></li>
+                                </ul>
+                                {% endif %}
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- sidebar menu area end -->

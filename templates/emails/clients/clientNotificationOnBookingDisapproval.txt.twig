@@ -1,0 +1,8 @@
+{% trans %}Saludos{% endtrans %} {{ booking.clientName }}!
+
+-----------------------------------------------------------------------------
+{% trans %}Recently you tried to book a trip to Vinales, Cuba but due to the little time left to organize it, it was not possible to process your request. We recommend you try again with another date.{% endtrans %}
+
+
+
+{{ absolute_url(path('booking_confirmation', {'_locale': booking.BookingLang, 'orderNumber': booking.orderNumber})) }}

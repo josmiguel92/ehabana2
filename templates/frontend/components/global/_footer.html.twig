@@ -1,0 +1,56 @@
+<footer class="footer">
+    <div class="footer__image">
+        <picture>
+            <source class="lazyload"
+                    media="(min-width: 1200px)"
+                    sizes="100vw"
+                    data-srcset="
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+            <img class="lazyload blur-up"
+                 sizes="100vw"
+                 data-srcset="
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                 src="{{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                 alt="Horse riding in vinales, you can make a reservation in advance with us">
+        </picture>
+    </div>
+
+    <div class="footer__contact">
+        <address>
+            {% trans %}
+                text.contact_footer_mail
+            {% endtrans %}
+            <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
+            {% trans %}
+                text.contact_footer_phone
+            {% endtrans %}
+            <a href="tel://+5355864523">+53 5 5864523</a>
+        </address>
+
+        <div class="social">
+            <ul>
+                <li>
+                    <a href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html" target="_blank">
+                        <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="tripadvisor icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/taxidriverscuba/" target="_blank">
+                        <img src="{{ asset('img/icons/facebook.svg') }}" alt="facebook icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.instagram.com/taxidriverscuba/" target="_blank">
+                        <img src="{{ asset('img/icons/instagram.svg') }}" alt="instagram icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</footer>

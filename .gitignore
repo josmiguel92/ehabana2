@@ -1,0 +1,63 @@
+# ----------------------------
+# Generated Files & Folders
+# ----------------------------
+
+# [1] : Windows thumbnail cache files.
+# [2] : Folder config file.
+# [3] : Recycle Bin used on file shares.
+
+.idea
+.DS_Store
+.sass-cache
+Thumbs.db     # [1]
+ehthumbs.db   # [1]
+Desktop.ini   # [2]
+$RECYCLE.BIN  # [3]
+
+# ----------------------------
+# Packaging
+# ----------------------------
+
+logs
+*.log
+npm-debug.log*
+node_modules
+yarn.lock
+package-lock.json
+
+# ----------------------------
+# Project Folders
+# ----------------------------
+
+build/
+
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.test
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

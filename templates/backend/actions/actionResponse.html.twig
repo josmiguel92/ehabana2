@@ -1,0 +1,20 @@
+{% extends 'backend/base.html.twig' %}
+{%  block container %}
+
+
+    <div class="login-area login-bg" style="background-image: url({{ asset('img/more-destinations.jpg') | imagine_filter('min_width_1920') }})">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <div class="login-form-head" style="display: flex; flex-direction: column">
+                    <h4>Vinales.taxi</h4>
+                    <p style="margin-top: 2em">...</p>
+                    <p style="margin-top: 1em">{{ action }}</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
+
+{% endblock %}

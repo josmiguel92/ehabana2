@@ -1,0 +1,105 @@
+    <h1>Nueva reserva en Vinales.taxi.</h1>
+
+    {% if not booking.differenceTimeGreaterThan12Hours and not booking.actionTaken%}
+        <h2 style="color: #491217">
+            ======================================================<br>
+            Esta reserva tiene menos de 12 horas para realizarse!!<br>
+            ======================================================
+        </h2>
+    {% endif %}
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Número de reserva</th>
+                <td>{{ booking.orderNumber }}</td>
+            </tr>
+            <tr>
+                <th>Nombre del cliente</th>
+                <td>{{ booking.clientName }}</td>
+            </tr>
+            <tr>
+                <th>Email del cliente</th>
+                <td>{{ booking.clientEmail }}</td>
+            </tr>
+            <tr>
+                <th>Telefono del cliente</th>
+                <td>{{ booking.telephone }}</td>
+            </tr>            
+            <tr>
+                <th>Lugar</th>
+                <td>{{ booking.pickupPlace }}</td>
+            </tr>
+            
+            <tr>
+                <th>Cantidad de personas</th>
+                <td>{{ booking.peopleCount }}</td>
+            </tr>
+
+            <tr>
+                <th>Precio</th>
+                <td>{{ booking.price }} USD</td>
+            </tr>
+            
+            <tr>
+                <th>Detalles</th>
+                <td>{{ booking.pickupDetails }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ booking.pickupTime ? booking.pickupDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Hora</th>
+                <td>{{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mensaje del cliente</th>
+                <td>{{ booking.clientMessage }}</td>
+            </tr>
+            <tr>
+                <th>Idioma</th>
+                <td>{{ booking.bookingLang }}</td>
+            </tr>
+            <tr>
+                <th>Fecha/Hora en que reserva</th>
+                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+
+            <tr>
+                <th>Campaña</th>
+                <td>{{ booking.campaign }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    {% if not booking.differenceTimeGreaterThan12Hours  and not booking.actionTaken %}
+        <p>Debe realizar una acción antes del término de una hora <strong>({{ 'now + 1 hour' | date ('H:m') }})</strong>. </p>
+        <table style="width: 100%">
+            <tr>
+                <td>
+                    <h3>
+                        <a href="{{ absolute_url(path('action_approve_booking', {'uniqueToken': booking.uniqueToken})) }}" title="aprobar">Aprobar</a>
+                    </h3>
+                </td>
+
+                <td colspan="3" style="width: 75%"></td>
+
+                <td><h3> | | </h3></td>
+
+                <td>
+                    <h3>
+                        <a href="{{ absolute_url(path('action_disapprove_booking', {'uniqueToken': booking.uniqueToken})) }}" title="No aprobar">No Aprobar</a>
+                    </h3>
+                </td>
+            </tr>
+        </table>
+
+    {% endif %}
+
+
+
+    <a href="{{ absolute_url('booking_index') }}">Ver todas las reservas</a>
+
+    <a href="{{ absolute_url('booking_edit', {'id': booking.id}) }}">Edit</a>
+

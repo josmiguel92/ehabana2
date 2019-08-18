@@ -1,0 +1,75 @@
+{% extends 'backend/base.html.twig' %}
+{% set pagename = 'booking' %}
+{% block title %}Booking index{% endblock %}
+{% block breacrumbs %}
+    <h4 class="page-title pull-left">Bookings</h4>
+    <ul class="breadcrumbs pull-left">
+        <li><a href="{{ path('frontend') }}">Home</a></li>
+        <li><span>Bookings</span></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id/orderNumber</th>
+                <th>BookingDate</th>
+                <th>Campaign</th>
+
+                <th>ClientName</th>
+                <th>ClientEmail</th>
+                <th>PickupPlace</th>
+                <th>PickupDate/Time</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.id }}/{{ booking.orderNumber }}</td>
+                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d') : '' }}<br>
+                    {{ booking.bookingTime ? booking.bookingTime|date('H:i') : '' }}</td>
+                <td>{{ booking.campaign }}</td>
+                <td>{{ booking.clientName }}</td>
+                <td>{{ booking.clientEmail }}</td>
+                <td>{{ booking.pickupPlace }}</td>
+                <td>{{ booking.pickupDate ? booking.pickupDate|date('Y-m-d') : '' }} <br>
+                    {{ booking.pickupTime ? booking.pickupTime|date('H:i') : '' }}</td>
+                <td>
+                    <a href="{{ path('booking_pdf_export', {'orderNumber': booking.orderNumber}) }}"><i class="ti-printer"></i> </a>
+                    <a href="{{ path('booking_show', {'id': booking.id}) }}"><i class="ti-eye"></i></a>
+                    <a href="{{ path('booking_edit', {'id': booking.id}) }}"><i class="ti-pencil"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('backend_booking_new') }}" class="pull-right btn-xs btn-primary mb-3">Add new</a>
+
+    <nav aria-label="Pagination" class="row justify-content-md-center">
+        <ul class="pagination">
+            <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                <a class="page-link" href="{{ path('booking_index_paged', {'page':page-1}) }}" tabindex="-1">Previous</a>
+            </li>
+            {% if page > 1 %}
+            <li class="page-item"><a class="page-link" href="{{ path('booking_index_paged', {'page':page-1}) }}">{{ page - 1}}</a></li>
+            {% endif %}
+            <li class="page-item active">
+                <a class="page-link" href="#">{{ page }} <span class="sr-only">(current)</span></a>
+            </li>
+            {% if page < last_page %}
+            <li class="page-item"><a class="page-link" href="{{ path('booking_index_paged', {'page':page+1} ) }}">{{ page +1 }}</a></li>
+            {% endif %}
+            <li class="page-item {% if page == last_page %}disabled{% endif %}">
+                <a class="page-link" href="{{ path('booking_index_paged', {'page':page+1}) }}">Next</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

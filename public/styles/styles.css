@@ -1,0 +1,1291 @@
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+*::-moz-selection {
+  background-color: rgba(96, 169, 2, 0.45);
+  color: white; }
+
+*::selection {
+  background-color: rgba(96, 169, 2, 0.45);
+  color: white; }
+
+h1, h2, h3, h4, h5, h6, p, a, label, li, span, address {
+  line-height: 1.35;
+  color: #5b5b5b; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', sans-serif; }
+
+p, a, label, li, span {
+  font-size: 1.05em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF; }
+
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format("woff2");
+  unicode-range: U+0370-03FF; }
+
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF; }
+
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2) format("woff2");
+  unicode-range: U+0370-03FF; }
+
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngMUXZYTXPIvIBgJJSb6ufA5qW54A.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngMUXZYTXPIvIBgJJSb6ufJ5qW54A.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngMUXZYTXPIvIBgJJSb6ufB5qW54A.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF; }
+
+/* greek */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngMUXZYTXPIvIBgJJSb6ufO5qW54A.woff2) format("woff2");
+  unicode-range: U+0370-03FF; }
+
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngMUXZYTXPIvIBgJJSb6ufC5qW54A.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngMUXZYTXPIvIBgJJSb6ufD5qW54A.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngMUXZYTXPIvIBgJJSb6ufN5qU.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngRUXZYTXPIvIBgJJSb6u92w7CLwR26eg.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngRUXZYTXPIvIBgJJSb6u92w7CCwR26eg.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngRUXZYTXPIvIBgJJSb6u92w7CKwR26eg.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF; }
+
+/* greek */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngRUXZYTXPIvIBgJJSb6u92w7CFwR26eg.woff2) format("woff2");
+  unicode-range: U+0370-03FF; }
+
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngRUXZYTXPIvIBgJJSb6u92w7CJwR26eg.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngRUXZYTXPIvIBgJJSb6u92w7CIwR26eg.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url(https://fonts.gstatic.com/s/robotoslab/v8/BngRUXZYTXPIvIBgJJSb6u92w7CGwR0.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: .5em;
+  margin: 1em 1em 1em 0;
+  border: 1px #6a6a6a solid;
+  width: 90%;
+  font-size: 1.1em; }
+
+input[type="submit"] {
+  cursor: pointer; }
+
+.form__item {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+.form-group label {
+  margin-right: 10px; }
+
+.btn {
+  padding: .5em 1.5em;
+  background-color: transparent;
+  border-radius: 4px;
+  color: white;
+  border: 0 transparent solid; }
+  @media (min-width: 800px) {
+    .btn {
+      padding: .75em 2em; } }
+  .btn--primary {
+    color: white;
+    background-color: #60a902; }
+  .btn--primary-gradient {
+    color: white;
+    background: linear-gradient(90deg, #60a902 80%, #776c6c);
+    box-shadow: #ffffff73 2px 2px 10px;
+    border-bottom: 1px transparent solid; }
+    .btn--primary-gradient:hover {
+      background: linear-gradient(-90deg, #60a902 80%, #776c6c); }
+
+.title {
+  position: relative;
+  font-family: 'Roboto Slab', serif;
+  color: #6a6a6a; }
+  .title--center {
+    text-align: center; }
+  .title--vertical-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; }
+  .title--white {
+    color: white; }
+  @media (min-width: 800px) {
+    .title--big {
+      font-size: 2.5em; } }
+
+.blur-up {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
+  transition: -webkit-filter 600ms;
+  transition: filter 600ms;
+  transition: filter 600ms, -webkit-filter 600ms; }
+  .blur-up.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0); }
+
+.header {
+  z-index: 2;
+  background-color: rgba(26, 26, 26, 0.95);
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: .25em 0; }
+  @media (min-width: 800px) {
+    .header {
+      justify-content: space-evenly;
+      position: fixed; } }
+  .header .logo {
+    width: 4em;
+    position: relative; }
+    @media (min-width: 800px) {
+      .header .logo {
+        width: 5em; } }
+  .header .nav {
+    display: none;
+    width: 100%; }
+    @media (min-width: 800px) {
+      .header .nav {
+        display: block;
+        width: auto; } }
+    .header .nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      list-style: none; }
+      .header .nav ul li a {
+        margin: auto .5em;
+        padding: .75em;
+        border: 1px transparent solid;
+        transition: border .3s ease-in-out; }
+        .header .nav ul li a:hover {
+          border: 1px white solid; }
+    .header .nav--special > a {
+      border: 1px #60a902 solid !important; }
+    .header .nav--is-visible {
+      display: block; }
+      .header .nav--is-visible ul li {
+        margin: .75em auto; }
+  .header .menu-icon {
+    order: 2;
+    width: 20px;
+    height: 19px;
+    position: relative;
+    background-color: rgba(227, 74, 76, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 1em; }
+    @media (min-width: 800px) {
+      .header .menu-icon {
+        display: none; } }
+    .header .menu-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: white;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
+    .header .menu-icon__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: white;
+      transition: all .3s ease-out;
+      -webkit-transform-origin: 0 50%;
+      transform-origin: 0 50%; }
+    .header .menu-icon::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: white;
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
+    .header .menu-icon--close-x::before {
+      -webkit-transform: rotate(45deg) scaleX(1.25);
+      transform: rotate(45deg) scaleX(1.25); }
+    .header .menu-icon--close-x .menu-icon__middle {
+      opacity: 0;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0); }
+    .header .menu-icon--close-x::after {
+      -webkit-transform: rotate(-45deg) scale(1.25) translateY(1px);
+      transform: rotate(-45deg) scale(1.25) translateY(1px); }
+  .header .lang {
+    order: 1;
+    display: flex;
+    width: auto;
+    z-index: -10; }
+    @media (min-width: 800px) {
+      .header .lang {
+        opacity: 1;
+        z-index: 1; } }
+    .header .lang > ul > li {
+      border-bottom: 1px #60a902 solid;
+      text-transform: uppercase; }
+    .header .lang ul {
+      padding-left: 0;
+      margin: 0; }
+    .header .lang li {
+      color: #fff;
+      background-color: #1a1a1a;
+      display: block;
+      float: left;
+      padding: .55em;
+      position: relative;
+      text-decoration: none;
+      transition-duration: 0.5s;
+      transition: all;
+      border-bottom: 1px transparent solid; }
+      .header .lang li:hover {
+        border-bottom: 1px #60a902 solid; }
+      .header .lang li a {
+        color: white;
+        font-size: .9em;
+        font-weight: 500; }
+    .header .lang ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.5s ease;
+      margin-top: .5em;
+      left: 0;
+      display: none;
+      top: 1.6em; }
+    .header .lang ul li:hover > ul,
+    .header .lang ul li ul:hover {
+      visibility: visible;
+      opacity: 1;
+      display: block; }
+    .header .lang ul li ul li {
+      clear: both;
+      width: 100%; }
+  .header--is-visible {
+    flex-wrap: wrap;
+    z-index: 2;
+    background-color: rgba(26, 26, 26, 0.9); }
+    .header--is-visible li a {
+      color: #fff; }
+    .header--is-visible .menu-icon {
+      order: 0; }
+    .header--is-visible .lang {
+      display: none; }
+
+.section {
+  margin: 5%; }
+  .section__description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .section__description .title {
+      width: 100%; }
+    .section__description__text {
+      width: 50%; }
+      .section__description__text p {
+        text-align: center; }
+  .section--no-margin {
+    margin: 0; }
+
+.intro {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center; }
+  @media (min-width: 800px) {
+    .intro {
+      height: 100vh; } }
+  .intro__content {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; }
+    @media (min-width: 800px) {
+      .intro__content {
+        margin-left: 4em;
+        width: 100%;
+        justify-content: flex-start; } }
+    .intro__content__text {
+      width: 90%;
+      margin: auto 5%;
+      text-shadow: 2px 2px 10px #000000e0; }
+      @media (min-width: 800px) {
+        .intro__content__text {
+          width: 40%; } }
+    .intro__content__button {
+      margin: auto 5%;
+      width: 100%; }
+
+@-webkit-keyframes show {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%); }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0); } }
+
+@keyframes show {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%); }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0); } }
+
+@-webkit-keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+.tripadvisor_certificate {
+  position: absolute;
+  background-color: white;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  width: 25%;
+  bottom: 0;
+  right: .5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  -webkit-animation: show 2s ease-in-out 1;
+  animation: show 2s ease-in-out 1; }
+  @media (min-width: 800px) {
+    .tripadvisor_certificate {
+      right: 1em;
+      width: 20%; } }
+  .tripadvisor_certificate__logo {
+    -webkit-animation: zoom 2s ease-in-out 10;
+    animation: zoom 2s ease-in-out 10;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    width: 100%;
+    margin: .25em; }
+    @media (min-width: 800px) {
+      .tripadvisor_certificate__logo {
+        width: 40%;
+        margin: 1em; } }
+
+.reservation {
+  margin-top: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  top: -3em;
+  position: relative; }
+  .reservation .title {
+    width: 100%; }
+  .reservation__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px rgba(106, 106, 106, 0.1) solid; }
+    @media (min-width: 800px) {
+      .reservation__content {
+        width: 80%; } }
+    .reservation__content__form {
+      padding: .5em;
+      width: 100%; }
+      @media (min-width: 800px) {
+        .reservation__content__form {
+          padding: 2em;
+          width: 75%; } }
+      .reservation__content__form__division {
+        display: flex;
+        justify-content: center;
+        height: 2px;
+        border-bottom: 1px rgba(106, 106, 106, 0.1) solid;
+        width: 80%;
+        margin: 1em auto; }
+      .reservation__content__form__group__single {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; }
+        .reservation__content__form__group__single.place, .reservation__content__form__group__single.time, .reservation__content__form__group__single.details, .reservation__content__form__group__single.passenger_price {
+          display: flex;
+          justify-content: flex-start; }
+          .reservation__content__form__group__single.place > div, .reservation__content__form__group__single.time > div, .reservation__content__form__group__single.details > div, .reservation__content__form__group__single.passenger_price > div {
+            margin-right: 2em; }
+            .reservation__content__form__group__single.place > div:last-child, .reservation__content__form__group__single.time > div:last-child, .reservation__content__form__group__single.details > div:last-child, .reservation__content__form__group__single.passenger_price > div:last-child {
+              margin-right: auto; }
+        .reservation__content__form__group__single.contact {
+          justify-content: space-between; }
+          .reservation__content__form__group__single.contact > div {
+            width: 45%; }
+
+.price_text {
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: all .3s ease-in-out; }
+  .price_text_negotiation {
+    position: absolute;
+    opacity: 0;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all .3s ease-in-out; }
+    .price_text_negotiation--is-visible {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1); }
+  .price_text--is-visible {
+    opacity: 1; }
+
+#booking_time_section.invalid_time h2 {
+  transition: all .3s ease-in-out;
+  color: #f78787;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); }
+
+#booking_time_section.invalid_time .advise_text {
+  display: block; }
+
+#booking_time_section.invalid_time .alert_icon {
+  display: inline-block; }
+
+#booking_time_section h2 {
+  display: inline-block; }
+
+#booking_time_section .advise_text {
+  display: none;
+  color: #f93737; }
+  #booking_time_section .advise_text a {
+    color: #f93737;
+    text-decoration: underline; }
+
+#booking_time_section .alert_icon {
+  width: 2em;
+  height: 2em;
+  position: relative;
+  display: none;
+  margin-right: .5em;
+  top: .25em; }
+  #booking_time_section .alert_icon img {
+    width: 100%;
+    height: 100%; }
+
+#booking_pickupPlace {
+  display: flex; }
+  #booking_pickupPlace > div {
+    margin: auto .5em; }
+    @media (min-width: 800px) {
+      #booking_pickupPlace > div {
+        margin: auto 1em; } }
+
+.reservation_details {
+  padding-top: 1em;
+  top: -3em;
+  position: relative;
+  background-color: white; }
+  @media (min-width: 800px) {
+    .reservation_details {
+      margin-top: 0;
+      padding: 3em 15% 0 15%; } }
+  .reservation_details #time_alert {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .reservation_details #time_alert img {
+      width: 4.5em; }
+    .reservation_details #time_alert .advise_text {
+      color: #f93737; }
+      .reservation_details #time_alert .advise_text a {
+        color: #f93737;
+        text-decoration: underline; }
+  .reservation_details__body {
+    text-align: left; }
+    @media (min-width: 800px) {
+      .reservation_details__body {
+        text-align: center; } }
+    .reservation_details__body a {
+      color: #60a902; }
+
+.activities {
+  margin: 5% 0; }
+  .activities__item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    .activities__item__image {
+      width: 100%;
+      position: relative;
+      overflow: hidden; }
+      @media (min-width: 800px) {
+        .activities__item__image {
+          width: 50%; } }
+      .activities__item__image picture {
+        position: absolute;
+        top: 0;
+        transition: opacity 1s ease-in; }
+      .activities__item__image picture:first-child {
+        position: relative; }
+      .activities__item__image picture + picture {
+        opacity: 0; }
+    .activities__item__text {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2em auto; }
+      @media (min-width: 800px) {
+        .activities__item__text {
+          width: 50%;
+          margin: auto; } }
+      .activities__item__text p {
+        margin: auto 10%;
+        width: 100%; }
+    @media (min-width: 800px) {
+      .activities__item--inverse .activities__item__image {
+        order: 2; }
+      .activities__item--inverse .activities__item__text {
+        order: 1; } }
+    .activities__item:first-child {
+      margin-top: 2em; }
+  .activities__button {
+    margin: 3em;
+    display: flex;
+    justify-content: center; }
+
+.why_with_us {
+  margin: 5%; }
+  .why_with_us__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .why_with_us__cards__item {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      @media (min-width: 800px) {
+        .why_with_us__cards__item {
+          width: 45%; } }
+      @media (min-width: 800px) {
+        .why_with_us__cards__item {
+          width: 18%; } }
+      .why_with_us__cards__item__text {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center; }
+        .why_with_us__cards__item__text a {
+          text-decoration: underline;
+          color: #6a6a6a; }
+
+.parallax {
+  height: 80vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover; }
+
+.more_places {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+  .more_places::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.3); }
+  .more_places__content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1; }
+    .more_places__content > div {
+      margin: 1em; }
+    .more_places__content__title {
+      width: 100%; }
+      .more_places__content__title h2 {
+        margin: 0; }
+    .more_places__content__places {
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+      .more_places__content__places ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; }
+        .more_places__content__places ul li {
+          margin: 1em;
+          display: inline;
+          list-style: none;
+          color: white;
+          text-shadow: #6a6a6a 2px 2px 10px;
+          transition: -webkit-text-decoration .3s ease-in-out;
+          transition: text-decoration .3s ease-in-out;
+          transition: text-decoration .3s ease-in-out, -webkit-text-decoration .3s ease-in-out; }
+          .more_places__content__places ul li:hover {
+            text-decoration: underline; }
+    .more_places__content__button {
+      display: flex;
+      width: 100%;
+      justify-content: center; }
+
+.contact_faq {
+  margin: 5%; }
+  .contact_faq__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .contact_faq__content__contact {
+      width: 100%; }
+      @media (min-width: 800px) {
+        .contact_faq__content__contact {
+          width: 45%;
+          order: 1; } }
+      .contact_faq__content__contact .form {
+        width: 90%;
+        margin: auto; }
+    .contact_faq__content__faq {
+      width: 100%; }
+      @media (min-width: 800px) {
+        .contact_faq__content__faq {
+          width: 45%;
+          order: 2; } }
+      .contact_faq__content__faq ul li {
+        margin: .5em; }
+        .contact_faq__content__faq ul li a {
+          color: #6a6a6a;
+          text-decoration: underline;
+          text-transform: uppercase; }
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+  .footer__image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 40vh; }
+    .footer__image:before {
+      content: '';
+      position: absolute;
+      width: 110%;
+      left: -5%;
+      height: 4em;
+      background: linear-gradient(#fff, #c7ecff);
+      z-index: 1;
+      -webkit-filter: blur(8px);
+      filter: blur(8px); }
+    .footer__image img {
+      top: 3em;
+      position: relative; }
+  .footer__contact {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0;
+    flex-wrap: wrap; }
+    @media (min-width: 800px) {
+      .footer__contact {
+        flex-wrap: nowrap;
+        justify-content: space-around; } }
+    .footer__contact address {
+      color: white;
+      width: 80%;
+      margin-bottom: 1em; }
+      @media (min-width: 800px) {
+        .footer__contact address {
+          width: auto;
+          margin-bottom: auto; } }
+    .footer__contact .social {
+      width: 100%; }
+      .footer__contact .social ul {
+        display: flex;
+        margin: .25em;
+        padding: 0;
+        justify-content: center; }
+        @media (min-width: 800px) {
+          .footer__contact .social ul {
+            justify-content: unset; } }
+        .footer__contact .social ul li {
+          display: inline;
+          list-style: none;
+          margin: auto .5em; }
+          .footer__contact .social ul li img {
+            width: 1.5em; }
+      @media (min-width: 800px) {
+        .footer__contact .social {
+          width: auto; } }

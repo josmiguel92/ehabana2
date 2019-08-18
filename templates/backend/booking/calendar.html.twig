@@ -1,0 +1,70 @@
+{% extends 'backend/base.html.twig' %}
+{% set pagename = 'booking' %}
+{% block title %}Booking{% endblock %}
+
+{% block body %}
+    <h1>Booking</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ booking.id }}</td>
+            </tr>
+            <tr>
+                <th>BookingTime</th>
+                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AirportPickup</th>
+                <td>{{ booking.airportPickup ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>FlyNumber</th>
+                <td>{{ booking.flyNumber }}</td>
+            </tr>
+            <tr>
+                <th>Campaign</th>
+                <td>{{ booking.campaign }}</td>
+            </tr>
+            <tr>
+                <th>ClientName</th>
+                <td>{{ booking.clientName }}</td>
+            </tr>
+            <tr>
+                <th>ClientEmail</th>
+                <td>{{ booking.clientEmail }}</td>
+            </tr>
+            <tr>
+                <th>PickupPlace</th>
+                <td>{{ booking.pickupPlace }}</td>
+            </tr>
+            <tr>
+                <th>PickupTime</th>
+                <td>{{ booking.pickupTime ? booking.pickupTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>BookingLang</th>
+                <td>{{ booking.bookingLang }}</td>
+            </tr>
+            <tr>
+                <th>ReturnTravel</th>
+                <td>{{ booking.returnTravel ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>ReturnPickupPlace</th>
+                <td>{{ booking.returnPickupPlace }}</td>
+            </tr>
+            <tr>
+                <th>ReturnPickupTime</th>
+                <td>{{ booking.returnPickupTime ? booking.returnPickupTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('booking_index') }}">back to list</a>
+
+    <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
+
+    {{ include('booking/_delete_form.html.twig') }}
+{% endblock %}

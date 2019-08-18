@@ -1,0 +1,15 @@
+    <h1>Nuevo mensaje en Vinales.taxi.</h1>
+    <h2>Este fue enviado el {{ contact.date | date('d/M/Y H:i') }}</h2>
+    <p>
+        <b>Nombre:</b> {{ contact.name }}
+    </p>
+
+
+    <p>
+        <b>Email:</b> <a href="{{ contact.email }}">{{ contact.email }}</a>
+    </p>
+
+    <p>
+        {{ contact.message }}
+    </p>
+

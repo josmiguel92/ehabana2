@@ -1,0 +1,38 @@
+{% extends 'frontend/base.html.twig' %}
+
+{% block javascripts_defer %}
+
+    <script src="{{ asset('vendors/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('vendors/nice-select/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('vendors/Magnific-Popup/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('js/mail-script.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+{% endblock %}
+
+{% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
+
+{% block body %}
+
+
+    <main>
+
+        {{ include('frontend/components/index/_hero.html.twig') }}
+
+        {{ include('frontend/components/index/_about.html.twig') }}
+
+        {{ include('frontend/components/index/_featured_food.html.twig') }}
+
+        {{ include('frontend/components/index/_offer.html.twig') }}
+
+        {#{{ include('frontend/components/index/_why_with_us.html.twig') }}#}
+
+        {#{{ include('frontend/components/index/_more_places.html.twig') }}#}
+
+        {#{{ include('frontend/components/index/_contact_faq.html.twig') }}#}
+    </main>
+
+
+{% endblock %}

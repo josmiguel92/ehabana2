@@ -1,0 +1,5 @@
+framework:
+    assets:
+#        base_path: 'static'
+        #base_url: 'http://static.vinales.test'
+

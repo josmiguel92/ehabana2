@@ -1,0 +1,84 @@
+<section class="contact_faq">
+
+    <div class="title title--center">
+        <h2>
+            {% trans %}
+                section_title.contact
+            {% endtrans %}
+        </h2>
+    </div>
+
+    <div class="contact_faq__content">
+
+        <div class="contact_faq__content__faq">
+            <h4>
+                {% trans %}
+                    subtitle.frequently_askly_questions
+                {% endtrans %}
+            </h4>
+            <ul>
+                <li>
+                    {% trans %}
+                        text.question_1
+                    {% endtrans %}
+
+                    <p>
+                        {% trans %}
+                            text.answer_1
+                        {% endtrans %}
+                        <a href="{{ path('booking') }}">
+                            {% trans %}
+                                button.reservation_form
+                            {% endtrans %}
+                        </a>.
+                    </p>
+                </li>
+                <li>
+                    {% trans %}
+                        text.question_2
+                    {% endtrans %}
+                    <p>
+                        {% trans %}
+                            text.answer_2
+                        {% endtrans %}
+                    </p>
+                </li>
+                <li>
+                    {% trans %}
+                        text.question_3
+                    {% endtrans %}
+
+                    <p>
+                        {% trans %}
+                            text.answer_3
+                        {% endtrans %}
+                    </p>
+                </li>
+                <li>
+                    {% trans %}
+                        text.question_4
+                    {% endtrans %}
+                    <p>
+                        {% trans %}
+                            text.answer_4
+                        {% endtrans %}
+                        <a target="_self" href="{{ path('booking') }}">
+                            {% trans %}
+                                button.reservation_form
+                            {% endtrans %}
+                        </a>.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact_faq__content__contact">
+            <h4>
+                {% trans %}
+                    subtitle.send_message
+                {% endtrans %}
+            </h4>
+            {{ form(form) }}
+        </div>
+    </div>
+</section>

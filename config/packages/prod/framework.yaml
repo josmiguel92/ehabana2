@@ -1,0 +1,3 @@
+parameters:
+  required_channel: https
+  external_app_authorization_key: 0000

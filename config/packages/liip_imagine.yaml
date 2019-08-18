@@ -1,0 +1,147 @@
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+    # configure resolvers
+#    resolvers:
+#
+#        # setup the default resolver
+#        default:
+
+#            flysystem:
+#                filesystem_service: oneup_flysystem.uploaded_images_filesystem
+#                root_url:           "https://static.kuba-reisen.de"
+#                cache_prefix:       cache
+#                visibility:         public
+
+
+
+
+    # define your filter sets under this option
+    filter_sets:
+
+        # an example thumbnail transformation definition
+        # https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html#create-thumbnails
+        small_thumbnail:
+
+            # set your image quality defaults
+            jpeg_quality:          60
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+
+                # auto rotate the image using EXIF metadata
+                auto_rotate: ~
+
+                # strip the image of all metadata
+                strip: ~
+
+                # scale and square the image to the given dimensions
+                thumbnail:
+                    size:          [40, 40]
+                    mode:          outbound
+
+        squared_thumbnail:
+
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+
+              # auto rotate the image using EXIF metadata
+                auto_rotate: ~
+
+                # strip the image of all metadata
+                strip: ~
+
+                # scale and square the image to the given dimensions
+                thumbnail:
+                    size:          [253, 253]
+                    mode:          outbound
+                    allow_upscale: true
+#                # create border by placing image on larger black background
+                background:
+                    size:     [256, 256]
+                    position: center
+                    color:    '#fff'
+
+        min_width_1920:
+            jpeg_quality: 85
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 1920
+
+        min_width_1200:
+            jpeg_quality: 85
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 1200
+
+        min_width_1000:
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 1000
+
+        min_width_900:
+
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 900
+
+        min_width_800:
+
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 800
+
+        min_width_600:
+
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 600
+
+#oneup_flysystem:
+#    adapters:
+#        uploaded_images:
+#            local:
+#                directory:  "static"
+
+#    filesystems:
+#        uploaded_images:
+#            adapter: uploaded_images
