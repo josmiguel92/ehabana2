@@ -68,7 +68,7 @@
 
 
             <script src="{{ asset('assets/vendor.js') }}"></script>
-            <script src="{{ asset('assets/0.js.js') }}"></script>
+            
 
             {#<link rel="stylesheet" href="{{ asset('styles/frontend.css') }}">#}
         {% endblock %}
@@ -92,5 +92,6 @@
         {{ include('frontend/components/global/_footer.html.twig') }}
 
         {% block javascripts %}{% endblock %}
+        <script src="{{ asset('assets/0.js.js') }}"></script>
     </body>
 </html>

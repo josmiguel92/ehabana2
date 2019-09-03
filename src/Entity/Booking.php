@@ -27,12 +27,6 @@ class Booking
     private $bookingTime;
 
     /**
-     * @ORM\Column(type="string", length=250, nullable=false)
-     * @Assert\NotBlank
-     */
-    private $pickupPlace;
-
-    /**
      * @ORM\Column(type="string", length=600, nullable=false)
      */
     private $pickupDetails;
