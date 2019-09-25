@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Contact;
 use App\Entity\Food;
 use App\Repository\FoodRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -12,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Booking;
 use App\Form\BookingType;
-use App\Form\ContactType;
+use App\DataHelper\UtmCampaign;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 class FrontendController extends AbstractController
@@ -24,20 +23,25 @@ class FrontendController extends AbstractController
      *     name="frontend")
      * @Cache(expires="+24 hour", maxage=15, public=true, mustRevalidate=false)
      */
-    public function index($_locale, FoodRepository $foodRepository)
+    public function index($_locale, FoodRepository $foodRepository, Request $request)
     {
 
         $featuresFoodList = $foodRepository->findAll();
 
-//        $form = $this->createForm(ContactType::class,
-//            new Contact(),
-//            ['action'=> $this->generateUrl('contact'),
-//            'method'=>'POST',
-//            ]);
+        $campaign = new UtmCampaign($request);
+        $booking = new Booking();
+        $booking->setCampaign($campaign->getContent());
+        $booking->setBookingLang($_locale);
+        $form = $this->createForm(BookingType::class,
+            $booking,
+            ['action'=> $this->generateUrl('booking'),
+            'method'=>'POST',
+            ]);
 
+        
 
         return $this->render('frontend/index.html.twig', [
-//            'form' => $form->createView(),
+                'form' => $form->createView(),
                 'featuresFoodList' => $featuresFoodList,
                 '_locale' => $_locale,
         ]);
@@ -48,27 +52,19 @@ class FrontendController extends AbstractController
      */
     public function booking(Request $request)
     {
-        return $this->json(['status'=>'success']);
-    }
+        $booking = new Booking();
+        $form = $this->createForm(BookingType::class, $booking);
+        $form->handleRequest($request);
 
-    /**
-     * @Route("/cf", name="createFood")
-     */
-    public function createFood()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        for ($i = 0; $i<5; $i++)
-        {
-            $food = new Food();
-            $food->setName(['en'=>"Food {$i}", 'es'=> "Comida {$i}"])
-                ->setIngredients(['en'=>"many things {$i}", 'es'=> "muchas cosas {$i}"]);
-            if($i%2)
-                $food->setPrice(rand(1000,1500)/100);
-            $em->persist($food);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($booking);
+            $entityManager->flush();
 
         }
-
-        $em->flush();
+        return $this->render('frontend/after_booking.html.twig', [
+            'booking' => $booking,
+    ]);
     }
+
 }

@@ -51,8 +51,11 @@ class Booking
      * @Assert\GreaterThanOrEqual(Booking::DATE_TO_START_BOOKINGS)
      */
     private $bookingDateTime;
-    const DATE_TO_START_BOOKINGS = "now";
+    const DATE_TO_START_BOOKINGS = "now + 12 hours";
 
+        //to temporary store the user input
+    private $bookingDate;
+    private $bookingTime;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -117,6 +120,7 @@ class Booking
      * @ORM\Column(type="string", length=600, nullable=true)
      */
     private $clientMessage;
+
 
 
     public function __construct()
@@ -249,9 +253,7 @@ class Booking
 
 
     public function differenceTimeGreaterThan12Hours(){
-        $pickupDateTime = new \DateTime($this->bookingDateTime()->format('Y-m-d H:i:s'));
-
-        $diff = $this->bookingTime->diff($pickupDateTime);
+        $diff = $this->creationDate->diff($this->bookingDateTime);
         $hours = $diff->h;
         $hours = $hours + ($diff->days*24);
 
@@ -322,7 +324,28 @@ class Booking
         $this->bookingDateTime = $bookingDateTime;
     }
 
+    public function getBookingDate(): ?\DateTimeInterface
+    {
+        return $this->bookingDate;
+    }
 
+    public function setBookingDate(?\DateTimeInterface $bookingDate): self
+    {
+        $this->bookingDate = $bookingDate;
 
+        return $this;
+    }
+
+    public function getBookingTime(): ?\DateTimeInterface
+    {
+        return $this->bookingTime;
+    }
+
+    public function setBookingTime(?\DateTimeInterface $bookingTime): self
+    {
+        $this->bookingTime = $bookingTime;
+
+        return $this;
+    }
 
 }

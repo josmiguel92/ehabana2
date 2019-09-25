@@ -10,14 +10,15 @@
           </div>
           <p>{% trans %}book.text{% endtrans %}</p>
         </div>
+        
         <div class="col-md-6 offset-xl-2 col-xl-5">
           <div class="bookform-wrapper" style="background-image: url({{asset('img/home/reservation-bg.png')}})">
             <h3>{% trans %}book.form.book_table{% endtrans %}</h3>
-
-            <form class="bookform-form" action="#">
+            {{ form_start(form, {'attr':{'class': 'bookform-form' } }) }}
+            
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="{% trans %}book.form.name{% endtrans %}" required>
+                  <input type="text" name="{{ form.clientName.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.name{% endtrans %}" required>
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="ti-user"></i></span>
                   </div>
@@ -25,7 +26,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="email" class="form-control" placeholder="{% trans %}book.form.email{% endtrans %}" required>
+                  <input type="email" name="{{ form.clientEmail.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.email{% endtrans %}" required>
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="ti-email"></i></span>
                   </div>
@@ -33,7 +34,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="{% trans %}book.form.phone_number{% endtrans %}">
+                  <input type="text" name="{{ form.telephone.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.phone_number{% endtrans %}">
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="ti-headphone-alt"></i></span>
                   </div>
@@ -43,7 +44,7 @@
               <div class="row datetime-inputs">
                 <div class="form-group col-md-6">
                     <div class="input-group">
-                      <input type="date" class="form-control" placeholder="{% trans %}book.form.select_date{% endtrans %}" 
+                      <input type="date" name="{{ form.bookingDate.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.select_date{% endtrans %}" 
                       min="{{ 'now + 12 hours' | date('Y-m-d') }}" max="{{ 'today + 45 days' | date('Y-m-d') }}"  required>
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="ti-notepad"></i></span>
@@ -52,7 +53,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <div class="input-group">
-                      <input type="time" class="form-control" placeholder="{% trans %}book.form.select_time{% endtrans %}" required>
+                      <input type="time" name="{{ form.bookingTime.vars.full_name }}" min="12:00" max="23:00" class="form-control" placeholder="{% trans %}book.form.select_time{% endtrans %}" required>
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="ti-notepad"></i></span>
                       </div>
@@ -63,16 +64,31 @@
 
               <div class="form-group">
                 <div class="input-group">
-                  <input type="number" class="form-control" placeholder="{% trans %}book.form.select_people{% endtrans %}" required max=40 min=1 >
+                  <input type="number" name="{{ form.peopleCount.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.select_people{% endtrans %}" required max=40 min=1 >
                   <div class="input-group-append">
                     <span class="input-group-text"><i class="ti-layout-column3"></i></span>
                   </div>
                 </div>
               </div>
+
+              <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" name="{{ form.clientMessage.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.comentary{% endtrans %}">
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="ti-comment"></i></span>
+                    </div>
+                  </div>
+                </div>
               <div class="form-group form-group-position">
-                <button class="button border-0" type="submit">{% trans %}cta.book_now.send{% endtrans %}</button>
+                <button class="button border-0 submit-btn" type="submit">{% trans %}cta.book_now.send{% endtrans %}</button>
               </div>
+              {{ form_widget(form._token)}}
+              {{ form_widget(form.campaign)}}
+              {{ form_widget(form.bookingLang)}}
             </form>
+            <div class="alert-msg">
+
+            </div>
           </div>
         </div>
       </div>

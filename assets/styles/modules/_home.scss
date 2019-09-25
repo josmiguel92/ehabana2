@@ -479,6 +479,10 @@
       margin-bottom: 40px;
     }
   }
+
+  .alert-msg{
+    color: $white;
+  }
 }
 
 .form-group-position{
@@ -577,8 +581,30 @@
   }
 }
 
-
-
+.smallSection{
+  &.contact{
+    background-size: 30%;
+    background-blend-mode: darken;
+    background-color: #00000082;
+    position: relative;
+    ul li{
+      i[class^="ti-"]{
+        margin-right: 5px;
+      }
+    }
+    a{
+      color: $primary-color;
+    }
+  }
+  padding: 1em;
+  img.contact-icon{
+    position: absolute;
+    height: 5em;
+    opacity: .5;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 
 
 

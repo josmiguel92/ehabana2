@@ -1,0 +1,98 @@
+approved_booking_email_subject: __approved_booking_email_subject
+disapproved_booking_email_subject: __disapproved_booking_email_subject
+Hi!: __Hi!
+'this are you trip details': '__this are you trip details'
+Saludos: __Saludos
+'Recientemente reservó un viaje a Viñales, Cuba, con los siguientes datos:': '__Recientemente reservó un viaje a Viñales, Cuba, con los siguientes datos:'
+'Fecha y Hora:': '__Fecha y Hora:'
+'Cantidad de personas:': '__Cantidad de personas:'
+'Precio:': '__Precio:'
+'Puede ver estos y otros detalles en la siguiente dirección web:': '__Puede ver estos y otros detalles en la siguiente dirección web:'
+'Your reservation has been approved, we will be waiting for you, following the information you provided.': '__Your reservation has been approved, we will be waiting for you, following the information you provided.'
+'we have some news for you': '__we have some news for you'
+'Recently you tried to book a trip to Vinales, Cuba but due to the little time left to organize it, it was not possible to process your request. We recommend you try again with another date.': '__Recently you tried to book a trip to Vinales, Cuba but due to the little time left to organize it, it was not possible to process your request. We recommend you try again with another date.'
+'View details in browser': '__View details in browser'
+'is a branch of': '__is a branch of'
+'Who we are': '__Who we are'
+Services: __Services
+Contacts: __Contacts
+'You are receiving this email because you make a reservation in our site.': '__You are receiving this email because you make a reservation in our site.'
+'if this is not the case, please': '__if this is not the case, please'
+'let us know': '__let us know'
+'Thanks for choosing vinales.taxi': '__Thanks for choosing vinales.taxi'
+'Su reserva fue aprovada, le esperaremos según los datos que nos proporcionó.': '__Su reserva fue aprovada, le esperaremos según los datos que nos proporcionó.'
+'Total:': '__Total:'
+'The amount of passenger is:': '__The amount of passenger is:'
+at: __at
+'We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.': '__We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.'
+'We provide a private service only for you and your family.': '__We provide a private service only for you and your family.'
+'We will pick you up at': '__We will pick you up at'
+the: __the
+'Hotel or House': '__Hotel or House'
+Airport: __Airport
+'looking for the flight with number': '__looking for the flight with number'
+Cruise: __Cruise
+named: __named
+'Hi! my name is Lesther Rodriguez.': '__Hi! my name is Lesther Rodriguez.'
+'We are small team with great passion for classic cars and adventures at the most amazing places that Cuba has to offer.': '__We are small team with great passion for classic cars and adventures at the most amazing places that Cuba has to offer.'
+'Your feedback is important': '__Your feedback is important'
+'Let us know what you think about travel with us!': '__Let us know what you think about travel with us!'
+meta.title: __meta.title
+meta.description: __meta.description
+meta.keywords: __meta.keywords
+nav.home: __nav.home
+nav.about: __nav.about
+nav.food: __nav.food
+nav.contact: __nav.contact
+nav.booking: __nav.booking
+about.title: __about.title
+about.subtitle: __about.subtitle
+about.text: __about.text
+cta.book_now: __cta.book_now
+book.title: __book.title
+book.subtitle: __book.subtitle
+book.text: __book.text
+book.form.book_table: __book.form.book_table
+book.form.name: __book.form.name
+book.form.email: __book.form.email
+book.form.phone_number: __book.form.phone_number
+book.form.select_date: __book.form.select_date
+book.form.select_time: __book.form.select_time
+book.form.select_people: __book.form.select_people
+cta.book_now.send: __cta.book_now.send
+section_title.contact: __section_title.contact
+subtitle.frequently_askly_questions: __subtitle.frequently_askly_questions
+text.question_1: __text.question_1
+text.answer_1: __text.answer_1
+button.reservation_form: __button.reservation_form
+text.question_2: __text.question_2
+text.answer_2: __text.answer_2
+text.question_3: __text.question_3
+text.answer_3: __text.answer_3
+text.question_4: __text.question_4
+text.answer_4: __text.answer_4
+subtitle.send_message: __subtitle.send_message
+home.cta.text: __home.cta.text
+home.cta.bigtext: __home.cta.bigtext
+food.title: __food.title
+food.subtitle: __food.subtitle
+hero.first_line: __hero.first_line
+hero.second_line: __hero.second_line
+hero.see_video: __hero.see_video
+offer.title: __offer.title
+offer.cta.btn_text: __offer.cta.btn_text
+section_title.why_with_us: __section_title.why_with_us
+section_title.why_with_us.subtitle: __section_title.why_with_us.subtitle
+text.reason_1_part_1: __text.reason_1_part_1
+text.reason_1_part_2: __text.reason_1_part_2
+text.reason_2: __text.reason_2
+text.reason_3: __text.reason_3
+text.reason_4: __text.reason_4
+Index.title: __Index.title
+contact.title: __contact.title
+contact.text: __contact.text
+contact.address: __contact.address
+contact.hours.open: __contact.hours.open
+afterbooking.success: __afterbooking.success
+afterbooking.error: __afterbooking.error
+book.form.comentary: __book.form.comentary

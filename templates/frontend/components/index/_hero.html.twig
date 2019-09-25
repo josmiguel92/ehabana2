@@ -3,9 +3,11 @@
 <section class="hero-banner">
     <div class="hero-wrapper">
         <div class="hero-left">
-            <h1 class="hero-title">{% trans %} hero.first_line {% endtrans %} <br><small>{% trans %} hero.second_line {% endtrans %}</small> </h1>
+            <h1 class="hero-title">{% trans %} hero.first_line {% endtrans %} 
+                <br>
+                <small>{% trans %} hero.second_line {% endtrans %}</small> </h1>
             <div class="d-sm-flex flex-wrap">
-                <a class="button button-hero button-shadow" href="#">{% trans %}cta.book_now{% endtrans %}</a>
+                <a class="button button-hero button-shadow" href="#booking">{% trans %}cta.book_now{% endtrans %}</a>
                 <a class="hero-banner__video" href="http://www.youtube.com/watch?v=0O2aH4XLbto">
                     <img src="{{ asset('img/icons/play.png') }}" alt="{% trans %}hero.see_video{% endtrans %}">
                     {% trans %}hero.see_video{% endtrans %}
