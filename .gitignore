@@ -30,6 +30,7 @@ package-lock.json
 # ----------------------------
 
 build/
+srcjs/
 
 
 ###> symfony/framework-bundle ###
