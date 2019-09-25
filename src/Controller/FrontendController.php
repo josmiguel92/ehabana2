@@ -62,7 +62,7 @@ class FrontendController extends AbstractController
             $entityManager->flush();
 
             $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
-                ->setFrom(['noreply@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
+                ->setFrom(['bookings@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
                 ->setTo('elizaldebarrestaurante@gmail.com')
                 ->setBcc(['josmiguel92+elizalde@gmail.com'])
                 ->setBody(
@@ -78,7 +78,7 @@ class FrontendController extends AbstractController
             $mailer->send($message);
 
             $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
-                ->setFrom(['noreply@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
+                ->setFrom(['bookings@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
                 ->setTo($booking->getClientEmail())
                 ->setBcc(['josmiguel92+elizalde@gmail.com'])
                 ->setBody(
