@@ -1,11 +1,28 @@
-{% extends 'emails/clients/client_base.html.twig' %}
-
+{#% extends 'emails/clients/client_base.html.twig' %#}
 {% block emailPresentation %}
     <p style="color: #333333;">
         {#Edit here#}
-        {% trans %}Hi!{% endtrans %} {{ booking.clientName }} {% trans %}this are you booking details{% endtrans %}<br>
+        {% trans %}Hi!{% endtrans %} {{ booking.clientName }} {% trans %}this is you booking details{% endtrans %}<br>
     </p>
 {% endblock emailPresentation %}
+<p>{% trans %}This email is for confirm your booking at ElizaldeHavana.{% endtrans %}</p> 
+<ul>
+    <li>{% trans %}Order Number:{% endtrans %} {{ booking.orderNumber }}</li>
+    <li>{% trans %}Date{% endtrans %} {{  booking.bookingDateTime ? booking.bookingDateTime|date('Y-m-d') : '' }}</li>
+    <li>{% trans %}Time{% endtrans %} {{  booking.bookingDateTime ? booking.bookingDateTime|date('H:i') : '' }}</li>
+
+    <li>{% trans %}Name:{% endtrans %} {{ booking.clientName }}</li>
+    <li>{% trans %}Email:{% endtrans %} {{ booking.clientEmail }}</li>
+    <li>{% trans %}Phone:{% endtrans %} {{ booking.telephone }}</li>
+    <li>{% trans %}People:{% endtrans %} {{ booking.peopleCount }}</li>
+    <li>{% trans %}Details:{% endtrans %} {{ booking.clientMessage }}</li>
+
+</ul>
+
+<p>{% trans %}Have a nice day!{% endtrans %}</p> 
+<p>ElizaldeHavana Restaurant Bar</p> 
+<p>{% trans %}Phone:{% endtrans %} +53 78672157</p> 
+<p>Habana, Cuba</p> 
 
 
 {% block emailMessage %}

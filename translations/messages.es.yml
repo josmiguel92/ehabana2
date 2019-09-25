@@ -2,44 +2,55 @@ approved_booking_email_subject: __approved_booking_email_subject
 disapproved_booking_email_subject: __disapproved_booking_email_subject
 Hi!: ¡Hola!
 Saludos: Saludos
-meta.title: Restaurante Elizalde Habana
-meta.description: Restaurante-bar Elizalde Habana. Restaurante de tapas en la Habana Vieja. Un lugar para comer rico en la Habana
-meta.keywords: Comer rico en la Habana, Comida rica, Habana, Havana, Restaurante, Restaurant Bar, Tapas Cocktails Copas, Comidas de Pamplona, Bar Habana Vieja, Cuba, Comida Española
+meta.title: 'Restaurante Elizalde Habana'
+meta.description: 'Restaurante-bar Elizalde Habana. Restaurante de tapas en la Habana Vieja. Un lugar para comer rico en la Habana'
+meta.keywords: 'Comer rico en la Habana, Comida rica, Habana, Havana, Restaurante, Restaurant Bar, Tapas Cocktails Copas, Comidas de Pamplona, Bar Habana Vieja, Cuba, Comida Española'
 nav.home: Inicio
-nav.about: Quienes somos
+nav.about: 'Quienes somos'
 nav.food: Comidas
 nav.contact: Contacto
 nav.booking: Reservar
-about.title: Quienes somos 
-about.subtitle: Maravillosa mezcla cubana-española
-about.text: Proveniente de la zona de Navarra, Jaime inició en el 2016 junto a su esposa Yanaisi este bar-restaurante. En junio del 2017 ya las mesas estaban listas, se encendieron los fogones y desde el día 12 de ese mismo mes, se abrieron nuestras puertas para todos aquellos que deseen disfrutar de la elegancia española y la cultura cubana.
-cta.book_now: Reservar ahora mismo
-book.title: Reservar una mesa
-book.subtitle: Una experiencia culinaria inolvidable
-book.text: Comparta con su familia y amigos en este agradable restaurante y deguste de los exquisitos platillos y cócteles que han marcado al Elizalde con la preferencia de todos nuestros clientes.
-book.form.book_table: Reserve ahora mismo
-book.form.name: Su nombre
-book.form.email: Su email
-book.form.phone_number: Su teléfono en la Habana
-book.form.select_date: Seleccione una fecha
-book.form.select_time: Seleccione una hora
-book.form.select_people: Cantidad de personas
-book.form.comentary: Algún detalle que desee agregar
-cta.book_now.send: Enviar datos
-home.cta.text: Donde se encuentran las culturas cubana y española
-home.cta.bigtext: Bar Restaurante ElizaldeHabana
-food.title: Platos y tapas destacadas
-food.subtitle: Preferidos por nuestros amigos
-hero.first_line: La buena comida
-hero.second_line: Ese es nuestro negocio
-hero.see_video: Mira este video
-offer.title: Los tragos más refrescantes
-offer.bigline: En nuestra barra
-offer.cta.btn_text: No necesitas reservar
-contact.title: Póngase en contacto
-contact.text: Estaremos encantados de poder ayudarle a organizar su reserva o cualquier otro evento que tenga en mente. Puede hacerlo vía email, teléfono o personalmente.
-contact.address: Calle Empedrado 521 entre Avenida Bélgica y Villegas. La Habana, Cuba. 
+about.title: 'Quienes somos'
+about.subtitle: 'Maravillosa mezcla cubana-española'
+about.text: 'Proveniente de la zona de Navarra, Jaime inició en el 2016 junto a su esposa Yanaisi este bar-restaurante. En junio del 2017 ya las mesas estaban listas, se encendieron los fogones y desde el día 12 de ese mismo mes, se abrieron nuestras puertas para todos aquellos que deseen disfrutar de la elegancia española y la cultura cubana.'
+cta.book_now: 'Reservar ahora mismo'
+book.title: 'Reservar una mesa'
+book.subtitle: 'Una experiencia culinaria inolvidable'
+book.text: 'Comparta con su familia y amigos en este agradable restaurante y deguste de los exquisitos platillos y cócteles que han marcado al Elizalde con la preferencia de todos nuestros clientes.'
+book.form.book_table: 'Reserve ahora mismo'
+book.form.name: 'Su nombre'
+book.form.email: 'Su email'
+book.form.phone_number: 'Su teléfono en la Habana'
+book.form.select_date: 'Seleccione una fecha'
+book.form.select_time: 'Seleccione una hora'
+book.form.select_people: 'Cantidad de personas'
+book.form.comentary: 'Algún detalle que desee agregar'
+cta.book_now.send: 'Enviar datos'
+home.cta.text: 'Donde se encuentran las culturas cubana y española'
+home.cta.bigtext: 'Bar Restaurante ElizaldeHabana'
+food.title: 'Platos y tapas destacadas'
+food.subtitle: 'Preferidos por nuestros amigos'
+hero.first_line: 'La buena comida'
+hero.second_line: 'Ese es nuestro negocio'
+hero.see_video: 'Mira este video'
+offer.title: 'Los tragos más refrescantes'
+offer.bigline: 'En nuestra barra'
+offer.cta.btn_text: 'No necesitas reservar'
+contact.title: 'Póngase en contacto'
+contact.text: 'Estaremos encantados de poder ayudarle a organizar su reserva o cualquier otro evento que tenga en mente. Puede hacerlo vía email, teléfono o personalmente.'
+contact.address: 'Calle Empedrado 521 entre Avenida Bélgica y Villegas. La Habana, Cuba.'
 contact.hours.open: 'Desde las 12:00 del medio día y hasta la media noche.'
-afterbooking.success: Gracias por enviar sus datos. Le enviaremos un email confirmandole.
-afterbooking.error: No fue posible realizar la reserva, intentelo nuevamente o envíenos un email con los detalles.
+afterbooking.success: 'Gracias por enviar sus datos. Le enviaremos un email confirmandole.'
+afterbooking.error: 'No fue posible realizar la reserva, intentelo nuevamente o envíenos un email con los detalles.'
 'this are you booking details': 'Estos son los detalles de su reserva'
+'This email is for confirm your booking at ElizaldeHavana.': '__This email is for confirm your booking at ElizaldeHavana.'
+'Order Number:': '__Order Number:'
+Date: Fecha
+Time: Hora
+'Name:': 'Nombre:'
+'Email:': 'Email:'
+'Phone:': 'Telefono:'
+'People:': 'Personas:'
+'Details:': 'Detalles:'
+'Have a nice day!': 'Tenga un buen día!'
+'this is you booking details': 'Estos son los detalles de su reserva'

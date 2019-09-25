@@ -50,7 +50,7 @@ class FrontendController extends AbstractController
     /**
      * @Route("/booking", name="booking")
      */
-    public function booking(Request $request)
+    public function booking(Request $request, \Swift_Mailer $mailer)
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -61,6 +61,36 @@ class FrontendController extends AbstractController
             $entityManager->persist($booking);
             $entityManager->flush();
 
+            $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
+                ->setFrom(['noreply@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
+                ->setTo('elizaldebarrestaurante@gmail.com')
+                ->setBcc(['josmiguel92+elizalde@gmail.com'])
+                ->setBody(
+                    $this->renderView(
+                    // templates/emails/registration.html.twig
+                        'emails/bookingNotification.html.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/html',
+                    'UTF-8'
+                );
+
+            $mailer->send($message);
+
+            $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
+                ->setFrom(['noreply@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
+                ->setTo($booking->getClientEmail())
+                ->setBcc(['josmiguel92+elizalde@gmail.com'])
+                ->setBody(
+                    $this->renderView(
+                    // templates/emails/registration.html.twig
+                        'emails/clients/clientNotificationOnBooking.html.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/html',
+                    'UTF-8'
+                );
+            $mailer->send($message);
         }
         return $this->render('frontend/after_booking.html.twig', [
             'booking' => $booking,

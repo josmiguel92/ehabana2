@@ -25,10 +25,6 @@
                 <th>Telefono del cliente</th>
                 <td>{{ booking.telephone }}</td>
             </tr>            
-            <tr>
-                <th>Lugar</th>
-                <td>{{ booking.pickupPlace }}</td>
-            </tr>
             
             <tr>
                 <th>Cantidad de personas</th>
@@ -36,21 +32,12 @@
             </tr>
 
             <tr>
-                <th>Precio</th>
-                <td>{{ booking.price }} USD</td>
-            </tr>
-            
-            <tr>
-                <th>Detalles</th>
-                <td>{{ booking.pickupDetails }}</td>
-            </tr>
-            <tr>
                 <th>Fecha</th>
-                <td>{{ booking.pickupTime ? booking.pickupDate|date('Y-m-d') : '' }}</td>
+                <td>{{ booking.bookingDateTime ? booking.bookingDateTime|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
                 <th>Hora</th>
-                <td>{{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}</td>
+                <td>{{ booking.bookingDateTime ? booking.bookingDateTime|date('H:i:s') : '' }}</td>
             </tr>
             <tr>
                 <th>Mensaje del cliente</th>
@@ -72,30 +59,6 @@
 
         </tbody>
     </table>
-
-    {% if not booking.differenceTimeGreaterThan12Hours  and not booking.actionTaken %}
-        <p>Debe realizar una acción antes del término de una hora <strong>({{ 'now + 1 hour' | date ('H:m') }})</strong>. </p>
-        <table style="width: 100%">
-            <tr>
-                <td>
-                    <h3>
-                        <a href="{{ absolute_url(path('action_approve_booking', {'uniqueToken': booking.uniqueToken})) }}" title="aprobar">Aprobar</a>
-                    </h3>
-                </td>
-
-                <td colspan="3" style="width: 75%"></td>
-
-                <td><h3> | | </h3></td>
-
-                <td>
-                    <h3>
-                        <a href="{{ absolute_url(path('action_disapprove_booking', {'uniqueToken': booking.uniqueToken})) }}" title="No aprobar">No Aprobar</a>
-                    </h3>
-                </td>
-            </tr>
-        </table>
-
-    {% endif %}
 
 
 
