@@ -1,6 +1,14 @@
 //--------- start footer Area -------------//
 .footer-area {
-	padding: 120px 0px 120px;
+	& > .container > svg {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 0;
+	}
+	position: relative;
+	padding: 60px 0px 120px;
 	// background: url(../img/footer-bg.png) no-repeat center;
 	background: #fff8f7;
 	@media (max-width: 991px) {
@@ -100,6 +108,8 @@
 		}
 	}
 	.footer-bottom {
+		z-index: 1;
+		position: relative;
 		margin-top: 70px;
 		@media (max-width: 991px) {
 			margin-top: 20px;
@@ -115,25 +125,35 @@
 		// 	font-weight: 700;
 		// }
 		.footer-social {
+			ul{
+				z-index: 1;
+				display: flex;
+				justify-content: end;
+				position: relative;
+			}
 			text-align: center;
 			@media (max-width: 991px) {
 				text-align: left;
 				margin-top: 30px;
 			}
 			a {
-				background: #2f2d4e;
-				margin-left: 3px;
-				width: 32px;
+				padding: 3px;
+				margin-left: 6px;
+				width: 38px;
 				color: $white;
 				display: inline-grid;
 				text-align: center;
-				height: 32px;
+				height: 38px;
 				align-content: center;
 				@include transition();
 				&:hover {
 					// @extend .gradient-bg;
-          background: $primary-color;
-          color: $white;
+					  color: $white;
+					  background-color: #fb5600;
+		  
+					svg path{
+						fill: $white;
+					}
 				}
 
 				i,span{

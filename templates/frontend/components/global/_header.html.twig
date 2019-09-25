@@ -12,20 +12,11 @@
 
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav justify-content-end">
-                        <li class="nav-item active"><a class="nav-link" href="{{ path('frontend') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a>
-                        <li class="nav-item"><a class="nav-link" href="chef.html">Chef</a>
-
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Blog</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog Single</a></li>
-                                <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{{ path('frontend') }}">{% trans %}nav.home{% endtrans %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">{% trans %}nav.about{% endtrans %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#food">{% trans %}nav.food{% endtrans %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">{% trans %}nav.contact{% endtrans %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#booking">{% trans %}nav.booking{% endtrans %}</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,3 +24,6 @@
     </div>
 </header>
 <!--================Header Menu Area =================-->
+<!--================Header Icon SVG definition start =================-->
+{#{ source('svg/social_icons.svg') }#}
+<!--================Header Icon SVG definition =================-->

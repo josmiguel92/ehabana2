@@ -1,56 +1,38 @@
-<footer class="footer">
-    <div class="footer__image">
-        <picture>
-            <source class="lazyload"
-                    media="(min-width: 1200px)"
-                    sizes="100vw"
-                    data-srcset="
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1920') }} 1920w,
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w
-                        ">
-
-            <img class="lazyload blur-up"
-                 sizes="100vw"
-                 data-srcset="
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
-                 src="{{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                 alt="Horse riding in vinales, you can make a reservation in advance with us">
-        </picture>
-    </div>
-
-    <div class="footer__contact">
-        <address>
-            {% trans %}
-                text.contact_footer_mail
-            {% endtrans %}
-            <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
-            {% trans %}
-                text.contact_footer_phone
-            {% endtrans %}
-            <a href="tel://+5355864523">+53 5 5864523</a>
-        </address>
-
-        <div class="social">
-            <ul>
-                <li>
-                    <a href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html" target="_blank">
-                        <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="tripadvisor icon">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/taxidriverscuba/" target="_blank">
-                        <img src="{{ asset('img/icons/facebook.svg') }}" alt="facebook icon">
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.instagram.com/taxidriverscuba/" target="_blank">
-                        <img src="{{ asset('img/icons/instagram.svg') }}" alt="instagram icon">
-                    </a>
-                </li>
-            </ul>
+<!-- ================ start footer Area ================= -->
+  <footer class="footer-area section-gap">
+    <div class="container">
+      <div class="footer-bottom row align-items-center text-center text-lg-left">
+        <p class="footer-text m-0 col-lg-8 col-md-12">
+Copyright &copy; {{ 'today' | date('Y') }}.  Havana, Cuba. All rights reserved <br> This website was made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://habana.tech" target="_blank">HabanaTech</a>
+        <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+                <ul class="social-icons">
+                        <li>
+                            <a href="https://www.facebook.com/ElizaldeHabana/" target="_blank">
+                                {{ source('svg/facebook.svg') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.tripadvisor.com/Restaurant_Review-d12580283" target="_blank">
+                                {{ source('svg/tripadvisor.svg') }}
+                            </a>
+                        </li>
+                        <li>
+                            {# TODO: LINK To instagram#}
+                            <a href="#">
+                                    {{ source('svg/instagram.svg') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:elizaldebarrestaurante@gmail.com">
+                                    {{ source('svg/mail.svg') }}
+                            </a>
+                        </li>
+                        
+                    </ul>
         </div>
+      </div>
+      {{ source('svg/wave03.svg') }}
     </div>
+  </footer>
+  <!-- ================ End footer Area ================= -->
 
-</footer>

@@ -24,12 +24,7 @@ class Booking
     /**
      * @ORM\Column(type="datetime")
      */
-    private $bookingTime;
-
-    /**
-     * @ORM\Column(type="string", length=600, nullable=false)
-     */
-    private $pickupDetails;
+    private $creationDate;
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
@@ -44,22 +39,18 @@ class Booking
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Email(
-     *     message = "The email '{{ value }}' is not a valid email."
+     *     message = "The email '{{ value }}' is not a valid one."
      * )
      *  @Assert\NotBlank
      */
     private $clientEmail;
 
-    /**
-     * @ORM\Column(type="time")
-     */
-    private $pickupTime;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      * @Assert\GreaterThanOrEqual(Booking::DATE_TO_START_BOOKINGS)
      */
-    private $pickupDate;
+    private $bookingDateTime;
     const DATE_TO_START_BOOKINGS = "now";
 
 
@@ -94,20 +85,12 @@ class Booking
      */
     private $uniqueToken;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $Price;
 
     /**
      * @ORM\Column(type="boolean")
      */
     private $UserConfirmed;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $TaxiConfirmed;
 
     /**
      * @ORM\Column(type="boolean")
@@ -138,11 +121,10 @@ class Booking
 
     public function __construct()
     {
-        $this->bookingTime = new \DateTime();
-        $this->orderNumber = "vin-".date("md")."-".substr(uniqid(),8,4);
+        $this->creationDate = new \DateTime();
+        $this->orderNumber = "el-".date("md")."-".substr(uniqid(),8,4);
         $this->uniqueToken = uniqid();
         $this->setUserConfirmed(false);
-        $this->setTaxiConfirmed(false);
         $this->setIsDone(false);
 
     }
@@ -153,17 +135,7 @@ class Booking
         return $this->id;
     }
 
-    public function getBookingTime(): ?\DateTimeInterface
-    {
-        return $this->bookingTime;
-    }
 
-    public function setBookingTime(\DateTimeInterface $bookingTime): self
-    {
-        $this->bookingTime = $bookingTime;
-
-        return $this;
-    }
 
     public function getCampaign(): ?string
     {
@@ -197,33 +169,6 @@ class Booking
     public function setClientEmail(string $clientEmail): self
     {
         $this->clientEmail = $clientEmail;
-
-        return $this;
-    }
-
-    public function getPickupPlace(): ?string
-    {
-        return $this->pickupPlace;
-    }
-
-    public function setPickupPlace(?string $pickupPlace): self
-    {
-        $this->pickupPlace = $pickupPlace;
-
-        return $this;
-    }
-
-    public function getPickupTime(): ?\DateTimeInterface
-    {
-        return $this->pickupTime;
-    }
-
-    public function setPickupTime($pickupTime): self
-    {
-        if(is_object($pickupTime))
-            $this->pickupTime = $pickupTime;
-        else
-            $this->pickupTime = new \DateTime($pickupTime);
 
         return $this;
     }
@@ -265,22 +210,6 @@ class Booking
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPickupDate()
-    {
-        return $this->pickupDate;
-    }
-
-    /**
-     * @param mixed $pickupDate
-     */
-    public function setPickupDate($pickupDate): void
-    {
-        $this->pickupDate = $pickupDate;
-    }
-
     public function getOrderNumber(): ?string
     {
         return $this->orderNumber;
@@ -289,18 +218,6 @@ class Booking
     public function setOrderNumber(string $orderNumber): self
     {
         $this->orderNumber = $orderNumber;
-
-        return $this;
-    }
-
-    public function getPrice(): ?float
-    {
-        return $this->Price;
-    }
-
-    public function setPrice(float $Price): self
-    {
-        $this->Price = $Price;
 
         return $this;
     }
@@ -317,17 +234,6 @@ class Booking
         return $this;
     }
 
-    public function getTaxiConfirmed(): ?bool
-    {
-        return $this->TaxiConfirmed;
-    }
-
-    public function setTaxiConfirmed(bool $TaxiConfirmed): self
-    {
-        $this->TaxiConfirmed = $TaxiConfirmed;
-
-        return $this;
-    }
 
     public function getIsDone(): ?bool
     {
@@ -341,40 +247,9 @@ class Booking
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPickupDetails()
-    {
-        return $this->pickupDetails;
-    }
-
-    /**
-     * @param mixed $pickupDetails
-     */
-    public function setPickupDetails($pickupDetails): void
-    {
-        $this->pickupDetails = $pickupDetails;
-    }
-
-
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function calculatePrice()
-    {
-        if ($this->peopleCount >= 1 and $this->peopleCount < 4)
-            $this->setPrice(153);
-        if ($this->peopleCount == 4)
-            $this->setPrice(165);
-        if ($this->peopleCount == 5)
-            $this->setPrice(177);
-        else $this->setPrice = null;
-    }
 
     public function differenceTimeGreaterThan12Hours(){
-        $pickupDateTime = new \DateTime($this->getPickupDate()->format('Y-m-d'). " " . $this->getPickupTime()->format("H:i:s"));
+        $pickupDateTime = new \DateTime($this->bookingDateTime()->format('Y-m-d H:i:s'));
 
         $diff = $this->bookingTime->diff($pickupDateTime);
         $hours = $diff->h;
@@ -413,6 +288,38 @@ class Booking
     public function setActionTaken($actionTaken): void
     {
         $this->actionTaken = $actionTaken;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * @param mixed $creationDate
+     */
+    public function setCreationDate($creationDate): void
+    {
+        $this->creationDate = $creationDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBookingDateTime()
+    {
+        return $this->bookingDateTime;
+    }
+
+    /**
+     * @param mixed $bookingDateTime
+     */
+    public function setBookingDateTime($bookingDateTime): void
+    {
+        $this->bookingDateTime = $bookingDateTime;
     }
 
 

@@ -3,7 +3,9 @@
 namespace App\Entity;
 
 use App\Entity\Traits\ImageFieldTrait;
+use App\Entity\Traits\TranslatableTrait;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FoodRepository")
@@ -12,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Food
 {
-    use ImageFieldTrait;
+    use ImageFieldTrait, TranslatableTrait;
 
     /**
      * @ORM\Id()
@@ -22,12 +24,12 @@ class Food
     private $id;
 
     /**
-     * @ORM\Column(type="json_array")
+     * @ORM\Column(type="json")
      */
     private $name;
 
     /**
-     * @ORM\Column(type="json_array", nullable=true)
+     * @ORM\Column(type="json", nullable=true)
      */
     private $ingredients;
 

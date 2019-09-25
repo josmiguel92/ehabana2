@@ -3,13 +3,13 @@
     <div class="container">
         <div class="row no-gutters">
             <div class="col-sm">
-                <img class="card-img rounded-0" src="img/home/offer-img.png" alt="">
+                <img class="card-img rounded-0" src="{{ asset('img/offer/offer-openbar.jpg')}}" alt="">
             </div>
             <div class="col-sm">
                 <div class="offer-card offer-card-position">
-                    <h3>Italian Pizza Offer</h3>
-                    <h2>50% OFF</h2>
-                    <a class="button" href="#">Read More</a>
+                    <h3>{% trans %}offer.title{%endtrans %}</h3>
+                    <h2>offer.bigline</h2>
+                    <a class="button" href="#">{% trans %}offer.cta.btn_text{% endtrans %}</a>
                 </div>
             </div>
         </div>

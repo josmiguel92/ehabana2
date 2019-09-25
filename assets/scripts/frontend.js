@@ -1,3 +1,4 @@
 import '../styles/frontend.scss';
 
-console.log("loaded JOSUE");
+//todo..... rendimiento en moviles es malo
+//import './frontend/scrollTransformImage/index.js'
