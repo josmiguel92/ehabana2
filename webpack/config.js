@@ -58,7 +58,7 @@ module.exports = {
   entry,
   output: {
     path: manifest.paths.build,
-    filename: '[id].[name].js'//manifest.outputFiles.bundle,
+    filename: manifest.outputFiles.bundle,
   },
   module: {
     rules,

@@ -1,4 +1,12 @@
-import '../styles/frontend.scss';
-
-//todo..... rendimiento en moviles es malo
-//import './frontend/scrollTransformImage/index.js'
+import './vendors/jquery/jquery-3.2.1.min.js'
+import './vendors/bootstrap/bootstrap.min.css'
+import './vendors/bootstrap/bootstrap.bundle.min.js'
+import './vendors/owl-carousel/owl.carousel.min.js'
+import './vendors/owl-carousel/owl.theme.default.min.css'
+import './vendors/owl-carousel/owl.carousel.min.css'
+import './vendors/Magnific-Popup/jquery.magnific-popup.min.js'
+import './vendors/Magnific-Popup/magnific-popup.css'
+import './vendors/themify-icons/themify-icons.css'
+import './frontend/mail-script'
+import './frontend/main'
+import '../styles/frontend.scss'

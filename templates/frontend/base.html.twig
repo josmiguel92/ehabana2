@@ -60,17 +60,16 @@
             {% trans %}meta.title{% endtrans %}
         </title>
         {% block stylesheets %}
+         {#
             <link rel="stylesheet" href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}">
             <link rel="stylesheet" href="{{ asset('vendors/themify-icons/themify-icons.css') }}">
             <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.theme.default.min.css') }}">
             <link rel="stylesheet" href="{{ asset('vendors/owl-carousel/owl.carousel.min.css') }}">
             <link rel="stylesheet" href="{{ asset('vendors/Magnific-Popup/magnific-popup.css') }}">
 
+            #}
 
-            <script src="{{ asset('assets/vendor.js') }}"></script>
-            
-
-            {#<link rel="stylesheet" href="{{ asset('styles/frontend.css') }}">#}
+            <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
         {% endblock %}
 
         {% block javascripts_defer %}{% endblock %}
@@ -111,6 +110,7 @@
         
 
 {% endblock %}
-        <script src="{{ asset('assets/0.js.js') }}"></script>
+        <script src="{{ asset('assets/vendor.js') }}"></script>
+        <script src="{{ asset('assets/bundle.js') }}"></script>
     </body>
 </html>
