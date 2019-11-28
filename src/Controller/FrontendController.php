@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Booking;
 use App\Form\BookingType;
@@ -38,7 +39,7 @@ class FrontendController extends AbstractController
             'method'=>'POST',
             ]);
 
-        
+
 
         return $this->render('frontend/index.html.twig', [
                 'form' => $form->createView(),
@@ -50,7 +51,7 @@ class FrontendController extends AbstractController
     /**
      * @Route("/booking", name="booking")
      */
-    public function booking(Request $request, \Swift_Mailer $mailer)
+    public function booking(Request $request, Mailer $mailer)
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -60,6 +61,7 @@ class FrontendController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($booking);
             $entityManager->flush();
+
 
             $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
                 ->setFrom(['bookings@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
