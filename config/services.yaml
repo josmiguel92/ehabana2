@@ -6,6 +6,8 @@
 parameters:
     locale: 'en'
     google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
+    required_channel: '%env(REQUIRED_CHANEL)%'
+    external_app_authorization_key: '%env(EXTERNAL_APP_AUTHORIZATION_KEY)%'
     main_app_url: 'https://www.restauranteelizaldehabana.com'
     google_tagmanager_id: 'UA-110642164-1'
 
