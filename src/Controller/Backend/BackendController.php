@@ -17,7 +17,7 @@ class BackendController extends AbstractController
      */
     public function index()
     {
-        return $this->render('backend/index.html.twig', [
+        return $this->render('backend/base.html.twig', [
 
         ]);
     }

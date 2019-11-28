@@ -1,9 +1,11 @@
 easy_admin:
+    site_name: 'Restaurante Elizalde Habana'
     list:
       # hide actions by default in a dropdown menu...
 #      collapse_actions: true
       actions: ['show', 'edit', 'delete']
     design:
+        brand_color: '#ec3237'
         #form_theme: ['@FOSCKEditor/Form/ckeditor_widget.html.twig']
         form_theme:
           - '@EasyAdmin/form/bootstrap_4.html.twig'
@@ -27,10 +29,6 @@ easy_admin:
 
         Food:
               class: App\Entity\Food
-
-
-        User:
-              class: App\Entity\User
 
 
 #        GalleryImage:
