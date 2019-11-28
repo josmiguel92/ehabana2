@@ -34,7 +34,7 @@ class Food
     private $ingredients;
 
     /**
-     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
+     * @ORM\Column(type="decimal", nullable=true)
      */
     private $price;
 

@@ -43,7 +43,7 @@ contact.hours.open: 'Desde las 12:00 PM hasta las 12:00 AM.'
 afterbooking.success: 'Gracias por enviar sus datos. Le enviaremos un email confirmandole.'
 afterbooking.error: 'No fue posible realizar la reserva, intentelo nuevamente o envíenos un email con los detalles.'
 'this are you booking details': 'Estos son los detalles de su reserva'
-'This email is for confirm your booking at ElizaldeHavana.': '__This email is for confirm your booking at ElizaldeHavana.'
+'This email is for confirm your booking at ElizaldeHavana.': 'Este email es para confirmar su reserva en la web del Restaurante Elizalde Habana'
 'Order Number:': '__Order Number:'
 Date: Fecha
 Time: Hora
@@ -54,3 +54,4 @@ Time: Hora
 'Details:': 'Detalles:'
 'Have a nice day!': 'Tenga un buen día!'
 'this is you booking details': 'Estos son los detalles de su reserva'
+email.client.booking.subject: "Confirme su reserva en Restaurante ElizaldeHabana"

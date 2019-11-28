@@ -3,11 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\Food;
+use App\EventMessages\Booking\NewBookingMsg;
 use App\Repository\FoodRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Booking;
 use App\Form\BookingType;
@@ -38,7 +42,7 @@ class FrontendController extends AbstractController
             'method'=>'POST',
             ]);
 
-        
+
 
         return $this->render('frontend/index.html.twig', [
                 'form' => $form->createView(),
@@ -50,7 +54,7 @@ class FrontendController extends AbstractController
     /**
      * @Route("/booking", name="booking")
      */
-    public function booking(Request $request, \Swift_Mailer $mailer)
+    public function booking(Request $request, MailerInterface $mailer, MessageBusInterface $bus)
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -61,40 +65,25 @@ class FrontendController extends AbstractController
             $entityManager->persist($booking);
             $entityManager->flush();
 
-            $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
-                ->setFrom(['bookings@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
-                ->setTo('elizaldebarrestaurante@gmail.com')
-                ->setBcc(['josmiguel92+elizalde@gmail.com'])
-                ->setBody(
-                    $this->renderView(
-                    // templates/emails/registration.html.twig
-                        'emails/bookingNotification.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                );
-
-            $mailer->send($message);
-
-            $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
-                ->setFrom(['bookings@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
-                ->setTo($booking->getClientEmail())
-                ->setBcc(['josmiguel92+elizalde@gmail.com'])
-                ->setBody(
-                    $this->renderView(
-                    // templates/emails/registration.html.twig
-                        'emails/clients/clientNotificationOnBooking.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                );
-            $mailer->send($message);
+            $bus->dispatch(new NewBookingMsg($booking));
         }
         return $this->render('frontend/after_booking.html.twig', [
             'booking' => $booking,
     ]);
+    }
+
+    /**
+     * @Route("/{_locale}/booking/confirmation/{orderNumber}", name="booking_confirmation", methods={"GET"},
+     *     defaults={"_locale": "en"},
+     *     requirements={"_locale": "en|es|fr"})
+     * @Route("/booking/confirmation/{orderNumber}", methods={"GET"})
+     */
+    public function confirmation(Booking $booking): Response
+    {
+      return $this->render('frontend/booked.html.twig', [
+        'booking' => $booking,
+        'orderNumber'=>$booking->getOrderNumber()
+      ]);
     }
 
 }

@@ -41,6 +41,7 @@ srcjs/
 /public/bundles/
 /var/
 /vendor/
+/public/uploads
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
