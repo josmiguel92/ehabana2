@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -69,6 +70,20 @@ class FrontendController extends AbstractController
         return $this->render('frontend/after_booking.html.twig', [
             'booking' => $booking,
     ]);
+    }
+
+    /**
+     * @Route("/{_locale}/booking/confirmation/{orderNumber}", name="booking_confirmation", methods={"GET"},
+     *     defaults={"_locale": "en"},
+     *     requirements={"_locale": "en|es|fr"})
+     * @Route("/booking/confirmation/{orderNumber}", methods={"GET"})
+     */
+    public function confirmation(Booking $booking): Response
+    {
+      return $this->render('frontend/booked.html.twig', [
+        'booking' => $booking,
+        'orderNumber'=>$booking->getOrderNumber()
+      ]);
     }
 
 }

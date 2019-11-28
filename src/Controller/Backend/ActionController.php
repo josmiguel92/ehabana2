@@ -13,77 +13,34 @@ class ActionController extends AbstractController
 {
     //TODO: Adopt
     /**
-     * @Route("/action/approve_booking/{uniqueToken}", name="action_approve_booking")
+     * @Route("/action/approving_booking/{uniqueToken}/{action}", name="action_approving",
+     *   requirements={"action": "approve|disapprove"})
      */
-    public function approveBooking(Booking $booking,  \Swift_Mailer $mailer, Translator $translator)
+    public function action_approving(Booking $booking, string $action)
     {
         if($booking and !$booking->getActionTaken())
         {
-            $booking->setActionTaken($booking::ACTION_APPROVED_BOOKING);
+            $action = $action === 'approve' ? $booking::ACTION_APPROVED_BOOKING : $booking::ACTION_DISAPPROVE_BOOKING;
+            $booking->setActionTaken($action);
             $em = $this->getDoctrine()->getManager();
             $em->persist($booking);
             $em->flush();
 
-            //mensaje a admin
-            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
-                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
-                ->setTo('taxidriverscuba@gmail.com')
-                ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
-                ->setBody(
-                    $this->renderView(
-                    // templates/emails/registration.html.twig
-                        'emails/bookingNotification.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'emails/bookingNotification.txt.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/plain',
-                    'UTF-8'
-                );
+            //TODO: dispatch a menssage to admin
+            //TODO: dispatch a menssage to client
 
-            $mailer->send($message);
+//          $this->renderView(
+//            'emails/clients/clientNotificationOnBookingApproval.html.twig',
+//            ['booking' => $booking]
+//          ),
 
-            // Save the current session locale
-            // before overwriting it. Suppose its 'en_US'
-            $sessionLocale = $translator->getLocale();
-
-            $translator->setLocale($booking->getBookingLang());
-
-            $subject = $translator->trans('approved_booking_email_subject');
-
-            $client_message = (new \Swift_Message($subject . ' - '. $booking->getOrderNumber() . ' | Vinales.taxi'))
-                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
-                ->setTo($booking->getClientEmail())
-                ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
-                ->setBody(
-                    $this->renderView(
-                        'emails/clients/clientNotificationOnBookingApproval.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'emails/clients/clientNotificationOnBookingApproval.txt.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/plain',
-                    'UTF-8'
-                );
-
-            $mailer->send($client_message);
-
-            $translator->setLocale($sessionLocale);
+//          $this->renderView(
+//            'emails/clients/clientNotificationOnBookingDisapproval.html.twig',
+//            ['booking' => $booking]
+//          ),
 
             return $this->render('backend/actions/actionResponse.html.twig', [
-                'action' => 'La reserva fue aceptada. Se le ha enviado un email al cliente.',
+                'action' => "La reserva fue $action. Se le ha enviado un email al cliente.",
             ]);
         }
 
@@ -92,58 +49,4 @@ class ActionController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/action/disapprove_booking/{uniqueToken}", name="action_disapprove_booking")
-     */
-    public function disapproveBooking(Booking $booking,  \Swift_Mailer $mailer, Translator $translator)
-    {
-        if($booking and !$booking->getActionTaken())
-        {
-            $booking->setActionTaken($booking::ACTION_DISAPPROVE_BOOKING);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($booking);
-            $em->flush();
-
-            // Save the current session locale
-            // before overwriting it. Suppose its 'en_US'
-            $sessionLocale = $translator->getLocale();
-
-            $translator->setLocale($booking->getBookingLang());
-
-            $subject = $translator->trans('disapproved_booking_email_subject');
-
-            $client_message = (new \Swift_Message($subject . ' - '. $booking->getOrderNumber() . ' | Vinales.taxi'))
-                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
-                ->setTo($booking->getClientEmail())
-                ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
-                ->setBody(
-                    $this->renderView(
-                        'emails/clients/clientNotificationOnBookingDisapproval.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'emails/clients/clientNotificationOnBookingDisapproval.txt.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/plain',
-                    'UTF-8'
-                );
-
-            $mailer->send($client_message);
-
-            $translator->setLocale($sessionLocale);
-
-            return $this->render('backend/actions/actionResponse.html.twig', [
-                'action' => 'Como indicó, la reserva no fue aceptada. Se le ha enviado un email al cliente.',
-            ]);
-        }
-
-        return $this->render('backend/actions/actionResponse.html.twig', [
-            'action' => 'Este enlace ya fue procesado y ya no en válido.',
-        ]);
-    }
 }
