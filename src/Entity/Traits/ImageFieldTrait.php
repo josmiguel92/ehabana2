@@ -23,16 +23,15 @@ trait ImageFieldTrait
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="images", fileNameProperty="image.name", size="image.size", mimeType="image.mimeType", originalName="image.originalName", dimensions="image.dimensions")
+     * @Vich\UploadableField(mapping="images", fileNameProperty="image")
      *
      * @var File
      */
     protected $imageFile;
 
     /**
-     * @ORM\Embedded(class="Vich\UploaderBundle\Entity\File")
-     *
-     * @var EmbeddedFile
+     * @ORM\Column(type="string", length=255)
+     * @var string
      */
     protected $image;
 
@@ -68,7 +67,7 @@ trait ImageFieldTrait
 
     public function __construct()
     {
-        $this->image = new EmbeddedFile();
+//        $this->image = new EmbeddedFile();
     }
 
     /**
@@ -80,7 +79,7 @@ trait ImageFieldTrait
      *
      * @param File|UploadedFile $imageFile
      */
-    public function setImageFile(?File $imageFile = null)
+    public function setImageFile(File $imageFile = null)
     {
         $this->imageFile = $imageFile;
 
@@ -96,12 +95,12 @@ trait ImageFieldTrait
         return $this->imageFile;
     }
 
-    public function setImage(EmbeddedFile $image)
+    public function setImage($image)
     {
         $this->image = $image;
     }
 
-    public function getImage(): ?EmbeddedFile
+    public function getImage()
     {
         return $this->image;
     }

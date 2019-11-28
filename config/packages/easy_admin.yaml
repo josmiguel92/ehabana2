@@ -1,5 +1,5 @@
 easy_admin:
-    site_name: 'Restaurante Elizalde Habana'
+    site_name: 'Restaurante ElizaldeHabana'
     list:
       # hide actions by default in a dropdown menu...
 #      collapse_actions: true
@@ -29,6 +29,24 @@ easy_admin:
 
         Food:
               class: App\Entity\Food
+              form:
+                 fields:
+                   - { property: 'nameEs', type: 'text', label: 'Nombre, español'}
+                   - { property: 'ingredientsEs', type: 'fos_ckeditor', label: 'Ingredientes, español'}
+
+                   - { property: 'nameEn', type: 'text', label: 'Nombre, english'}
+                   - { property: 'ingredientsEn', type: 'fos_ckeditor', label: 'Ingredientes, english'}
+
+                   - { property: 'price', type: 'money'}
+                   - { property: 'imageFile', type: 'vich_image' }
+                   - { property: 'alternativeText' }
+
+              list:
+                fields:
+                   - { property: 'nameEs', label: 'Nombre, español'}
+                   - { property: 'price', type: 'float'}
+                   - { property: 'image', type: 'image', base_path: 'uploads/images' }
+
 
 
 #        GalleryImage:
