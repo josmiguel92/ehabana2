@@ -12,9 +12,8 @@ use Symfony\Component\Routing\RouterInterface;
 class AdminNotification
 {
     private $booking;
-    private $email;
-    const ADMIN_EMAIL_ADDRESS = 'elizaldebarrestaurante@gmail.com';
-    const ADMIN_EMAIL_ADDRESS_COPY = 'josmiguel92+elizalde@gmail.com';
+    public const ADMIN_EMAIL_ADDRESS = 'elizaldebarrestaurante@gmail.com';
+    public const ADMIN_EMAIL_ADDRESS_COPY = 'josmiguel92+elizalde@gmail.com';
   /**
    * @var RouterInterface
    */
@@ -22,7 +21,8 @@ class AdminNotification
 
   /**
    * AdminNotification constructor.
-   * @param $booking
+   * @param Booking $booking
+   * @param RouterInterface $router
    */
   public function __construct(Booking $booking, RouterInterface $router)
   {

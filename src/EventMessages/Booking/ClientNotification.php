@@ -12,18 +12,25 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ClientNotification
 {
+  /**
+   * @var Booking
+   */
     private $booking;
-    private $email;
+
+    /**
+   * @var TranslatorInterface
+   */
     private $translator;
   /**
    * @var RouterInterface
    */
-  private $router;
+    private $router;
 
   /**
    * AdminNotification constructor.
    * @param Booking $booking
    * @param TranslatorInterface $translator
+   * @param RouterInterface $router
    */
   public function __construct(Booking $booking, TranslatorInterface $translator, RouterInterface $router)
   {
