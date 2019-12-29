@@ -1,7 +1,7 @@
 <!--================ Header Menu Area start =================-->
 <header class="header_area">
 
-   
+
 
     <div class="main_menu">
          <!--special new year -->
@@ -9,7 +9,14 @@
 
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container box_1620">
-                <a class="navbar-brand logo_h" href="{{ path('frontend') }}"><img src="{{ asset('img/logo_red.png') }}" alt=""></a>
+                <a class="navbar-brand logo_h" href="{{ path('frontend') }}">
+                  {% set dayofyear = 'today' | date('z')  %}
+                  {% if  dayofyear > 350 or dayofyear < 10%}
+                    <img src="{{ asset('img/logo_newyear.png') }}" alt="Elizalde Habana">
+                  {% else %}
+                    <img src="{{ asset('img/logo_red.png') }}" alt="Elizalde Habana">
+                  {% endif %}
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
