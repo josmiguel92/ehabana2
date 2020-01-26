@@ -51,18 +51,18 @@ easy_admin:
         Home:
           class: App\Entity\HomeText
 
-        Image:
+        HomeImage:
           class: App\Entity\HeaderImage
           form:
             fields:
               - { property: 'imageFile', type: 'vich_image' }
-            show:
-              fields:
-                - { property: 'ImagePath', type: 'image' }
-            list:
-              fields:
-                - { property: id }
-                - { property: 'ImagePath', type: 'image' }
+          show:
+            fields:
+              - { property: 'ImagePath', type: 'image' }
+          list:
+            fields:
+              - { property: id }
+              - { property: 'ImagePath', type: 'image' }
 
 
         Offer:
