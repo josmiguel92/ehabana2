@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Food;
 use App\Repository\FoodRepository;
+use App\Repository\HeaderImageRepository;
+use App\Repository\HomeTextRepository;
+use App\Repository\OfferRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,10 +26,24 @@ class FrontendController extends AbstractController
      *     name="frontend")
      * @Cache(expires="+24 hour", maxage=15, public=true, mustRevalidate=false)
      */
-    public function index($_locale, FoodRepository $foodRepository, Request $request)
+    public function index($_locale, FoodRepository $foodRepository, OfferRepository $offerRepository,
+                          HomeTextRepository $textRepository, HeaderImageRepository $imageRepository,
+                          Request $request)
     {
 
         $featuresFoodList = $foodRepository->findAll();
+
+        $offer = null;
+        if($offer = $offerRepository->findAll()) {
+          $offer = $offer[array_rand($offer)];
+        }
+
+        $text = $textRepository->findAll();
+        $text = array_shift($text);
+
+        $images = $imageRepository->findAll();
+        $images = array_slice($images, 0,5);
+
 
         $campaign = new UtmCampaign($request);
         $booking = new Booking();
@@ -38,11 +55,14 @@ class FrontendController extends AbstractController
             'method'=>'POST',
             ]);
 
-        
+
 
         return $this->render('frontend/index.html.twig', [
                 'form' => $form->createView(),
                 'featuresFoodList' => $featuresFoodList,
+                'offer' => $offer,
+                'text' => $text,
+                'images' => $images,
                 '_locale' => $_locale,
         ]);
     }
@@ -64,10 +84,8 @@ class FrontendController extends AbstractController
             $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
                 ->setFrom(['bookings@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
                 ->setTo('elizaldebarrestaurante@gmail.com')
-                ->setBcc(['josmiguel92+elizalde@gmail.com'])
                 ->setBody(
                     $this->renderView(
-                    // templates/emails/registration.html.twig
                         'emails/bookingNotification.html.twig',
                         ['booking' => $booking]
                     ),
@@ -80,10 +98,8 @@ class FrontendController extends AbstractController
             $message = (new \Swift_Message('Nueva reserva en ElizaldeHabana - '.$booking->getOrderNumber()))
                 ->setFrom(['bookings@restauranteelizaldehabana.com'=>'RestaurantElizaldeHabana'])
                 ->setTo($booking->getClientEmail())
-                ->setBcc(['josmiguel92+elizalde@gmail.com'])
                 ->setBody(
                     $this->renderView(
-                    // templates/emails/registration.html.twig
                         'emails/clients/clientNotificationOnBooking.html.twig',
                         ['booking' => $booking]
                     ),

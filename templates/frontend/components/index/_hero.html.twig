@@ -3,12 +3,12 @@
 <section class="hero-banner">
     <div class="hero-wrapper">
         <div class="hero-left">
-            <h1 class="hero-title">{% trans %} hero.first_line {% endtrans %} 
+            <h1 class="hero-title">{{ text.tituloPrincipal(_locale)}}
                 <br>
-                <small>{% trans %} hero.second_line {% endtrans %}</small> </h1>
+                <small>{{ text.subtituloPrincipal(_locale) }}</small> </h1>
             <div class="d-sm-flex flex-wrap">
                 <a class="button button-hero button-shadow" href="#booking">{% trans %}cta.book_now{% endtrans %}</a>
-                <a class="hero-banner__video" href="https://www.facebook.com/ElizaldeHabana/videos/548215792268989/">
+                <a class="hero-banner__video" href="{{ text.videoLink }}">
                     <img src="{{ asset('img/icons/play.png') }}" alt="{% trans %}hero.see_video{% endtrans %}">
                     {% trans %}hero.see_video{% endtrans %}
                 </a>
@@ -30,22 +30,14 @@
         </div>
         <div class="hero-right">
             <div class="owl-carousel owl-theme hero-carousel">
-            	<div class="hero-carousel-item animated-img-container">
-                    <img class="img-fluid" src="img/banner/hero-banner-newyear2020.jpg" alt="" style="max-height: 85vh;width: auto;">
-                    <a class="button button-hero button-shadow" href="img/banner/hero-banner-newyear2020.jpg">+</a>
+
+              {% for image in images %}
+            	  <div class="hero-carousel-item animated-img-container">
+                    <img class="img-fluid" src="{{ asset(image.imagePath)}}" alt="" style="max-height: 85vh;width: auto;">
+                    <a class="button button-hero button-shadow" href="{{ asset(image.imagePath)}}">+</a>
                 </div>
-                <div class="hero-carousel-item animated-img-container">
-                    <img class="img-fluid" src="img/banner/hero-banner0.jpg" alt="" style="filter: hue-rotate(0deg) saturate(130%)">
-                </div>
-                <div class="hero-carousel-item animated-img-container">
-                    <img class="img-fluid" src="img/banner/hero-banner1.jpg" alt="">
-                </div>
-                <div class="hero-carousel-item animated-img-container">
-                    <img class="img-fluid" src="img/banner/hero-banner2.jpg" alt="">
-                </div>
-                <div class="hero-carousel-item animated-img-container">
-                    <img class="img-fluid" src="img/banner/hero-banner3.jpg" alt="">
-                </div>
+              {% endfor %}
+
             </div>
         </div>
         <ul class="social-icons d-none d-lg-block">
@@ -70,7 +62,7 @@
                         {{ source('svg/mail.svg') }}
                 </a>
             </li>
-            
+
         </ul>
         {{ source('svg/wave01.svg') }}
         {{ source('svg/wave02.svg') }}

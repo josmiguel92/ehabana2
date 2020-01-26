@@ -1,4 +1,4 @@
-
+{% if featuresFoodList %}
 <!--================Featured Section Start =================-->
 <section class="section-margin mb-lg-100">
     <div class="container">
@@ -6,12 +6,11 @@
             <h4 class="intro-title">{% trans %}food.title{% endtrans %}</h4>
             <h2>{% trans %}food.subtitle{% endtrans %}</h2>
         </div>
-
-
         <div class="owl-carousel owl-theme featured-carousel">
             {% for featuredFood in featuresFoodList %}
+
                 <div class="featured-item">
-                    <img class="card-img rounded-0" src="img/home/featured1.png" alt="{{ featuredFood.Translations(_locale).name }}">
+                    <img class="card-img rounded-0" style="max-height: 20rem" src="{{ asset(featuredFood.imagePath) }}" alt="{{ featuredFood.Translations(_locale).name }}">
                     <div class="item-body">
                         <a href="#">
                             <h3>{{ featuredFood.Translations.name }}</h3>
@@ -36,3 +35,4 @@
     </div>
 </section>
 <!--================Featured Section End =================-->
+{% endif %}

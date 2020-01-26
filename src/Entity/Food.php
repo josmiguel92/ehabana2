@@ -34,7 +34,7 @@ class Food
     private $ingredients;
 
     /**
-     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
+     * @ORM\Column(type="decimal", nullable=true)
      */
     private $price;
 
@@ -77,5 +77,57 @@ class Food
         $this->price = $price;
 
         return $this;
+    }
+
+    public function setNameEs($nameEs): void
+    {
+      $tmp = json_decode($this->name, true);
+      $tmp['es'] = $nameEs;
+      $this->name = json_encode($tmp);
+    }
+
+    public function setNameEn($nameEn): void
+    {
+      $tmp = json_decode($this->name, true);
+      $tmp['en'] = $nameEn;
+      $this->name = json_encode($tmp);
+    }
+
+    public function setIngredientsEs($txtEs): void
+    {
+      $tmp = json_decode($this->ingredients, true);
+      $tmp['es'] = $txtEs;
+      $this->ingredients = json_encode($tmp);
+    }
+
+    public function setIngredientsEn($txtEn): void
+    {
+      $tmp = json_decode($this->ingredients, true);
+      $tmp['en'] = $txtEn;
+      $this->ingredients = json_encode($tmp);
+    }
+
+    public function getNameEs(): ?string
+    {
+      $tmp = json_decode($this->name, true);
+      return $tmp['es'] ?? null;
+    }
+
+    public function getNameEn(): ?string
+    {
+      $tmp = json_decode($this->name, true);
+      return $tmp['en'] ?? null;
+    }
+
+    public function getIngredientsEs(): ?string
+    {
+      $tmp = json_decode($this->ingredients, true);
+      return $tmp['es'] ?? null;
+    }
+
+    public function getIngredientsEn(): ?string
+    {
+      $tmp = json_decode($this->ingredients, true);
+      return $tmp['en'] ?? null;
     }
 }

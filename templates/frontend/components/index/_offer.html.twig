@@ -1,14 +1,15 @@
+{% if offer %}
 <!--================Offer Section Start =================-->
 <section class="bg-lightGray section-padding">
     <div class="container">
         <div class="row no-gutters">
             <div class="col-sm">
-                <img class="card-img rounded-0" src="{{ asset('img/offer/offer-openbar.jpg')}}" alt="">
+                <img class="card-img rounded-0" src="{{ asset(offer.imagePath)}}" alt="">
             </div>
             <div class="col-sm">
                 <div class="offer-card offer-card-position">
-                    <h3>{% trans %}offer.title{% endtrans %}</h3>
-                    <h2>{% trans %}offer.bigline{% endtrans %}</h2>
+                    <h3>{{ offer.title(_locale) }}</h3>
+                    <h2>{{ offer.text(_locale) }}</h2>
                     <b>{% trans %}offer.cta.btn_text{% endtrans %}</b>
                 </div>
             </div>
@@ -16,3 +17,4 @@
     </div>
 </section>
 <!--================Offer Section End =================-->
+{% endif %}

@@ -3,6 +3,7 @@
 namespace App\Entity\Traits;
 
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\String_;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -19,7 +20,7 @@ trait TranslatableTrait
         $this->currentLocale = $locale;
     }
 
-    public function getTranslations(string $locale = null)// :array
+    public function getTranslations(string $locale = 'en')// :array
     {
         //if locale is present, overwrite the CurrentLocale property
         if($locale)
@@ -36,6 +37,7 @@ trait TranslatableTrait
         // the array ones that contains the current languages key
         foreach ($properties as $property => $value)
         {
+          if(is_string($value) && $value = json_decode($value, true))
             if(is_array($value) and isset($value[$this->currentLocale]))
                 $this->translations[$property] = $value[$this->currentLocale];
         }

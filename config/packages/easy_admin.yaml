@@ -1,0 +1,94 @@
+easy_admin:
+    site_name: 'Elizalde Habana <em style="font-size: 80%;">Management</em>'
+    list:
+      # hide actions by default in a dropdown menu...
+#      collapse_actions: true
+      actions: ['show', 'edit', 'delete']
+    design:
+        assets:
+          css:
+            - '/admin/css/rewrite.css'
+        brand_color: '#e22104'
+
+      #form_theme: ['@FOSCKEditor/Form/ckeditor_widget.html.twig']
+        form_theme:
+          - '@EasyAdmin/form/bootstrap_4.html.twig'
+          - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+    entities:
+
+#        # List the entity class name you want to manage
+        Booking:
+          class: App\Entity\Booking
+
+        Food:
+          class: App\Entity\Food
+          form:
+            fields:
+              - { property: 'nameEs' }
+              - { property: 'nameEn' }
+              - { property: 'ingredientsEs' }
+              - { property: 'ingredientsEn' }
+              - { property: 'price' }
+              - { property: 'imageFile', type: 'vich_image' }
+          show:
+            fields:
+              - { property: 'nameEs' }
+              - { property: 'nameEn' }
+              - { property: 'ingredientsEs' }
+              - { property: 'ingredientsEn' }
+              - { property: 'price' }
+              - { property: 'ImagePath', type: 'image' }
+          list:
+            fields:
+              - { property: id }
+              - { property: 'nameEs' }
+              - { property: 'nameEn' }
+              - { property: 'ingredientsEs' }
+              - { property: 'ingredientsEn' }
+              - { property: 'price' }
+              - { property: 'ImagePath', type: 'image' }
+
+        Home:
+          class: App\Entity\HomeText
+
+        Image:
+          class: App\Entity\HeaderImage
+          form:
+            fields:
+              - { property: 'imageFile', type: 'vich_image' }
+            show:
+              fields:
+                - { property: 'ImagePath', type: 'image' }
+            list:
+              fields:
+                - { property: id }
+                - { property: 'ImagePath', type: 'image' }
+
+
+        Offer:
+          class: App\Entity\Offer
+          form:
+            fields:
+              - { property: 'titleEs' }
+              - { property: 'titleEn' }
+              - { property: 'textEs' }
+              - { property: 'textEn' }
+              - { property: 'imageFile', type: 'vich_image' }
+            show:
+              fields:
+                - { property: 'titleEs' }
+                - { property: 'titleEn' }
+                - { property: 'textEs' }
+                - { property: 'textEn' }
+                - { property: 'ImagePath', type: 'image' }
+            list:
+              fields:
+                - { property: id }
+                - { property: 'titleEs' }
+                - { property: 'titleEn' }
+                - { property: 'textEs' }
+                - { property: 'textEn' }
+                - { property: 'ImagePath', type: 'image' }
+
+
+#        - App\Entity\User

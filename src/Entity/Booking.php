@@ -126,8 +126,8 @@ class Booking
     public function __construct()
     {
         $this->creationDate = new \DateTime();
-        $this->orderNumber = "el-".date("md")."-".substr(uniqid(),8,4);
-        $this->uniqueToken = uniqid();
+        $this->orderNumber = "el-".date("md")."-".substr(uniqid('', true),8,4);
+        $this->uniqueToken = uniqid('', true);
         $this->setUserConfirmed(false);
         $this->setIsDone(false);
 
@@ -251,8 +251,8 @@ class Booking
         return $this;
     }
 
-
-    public function differenceTimeGreaterThan12Hours(){
+    public function differenceTimeGreaterThan12Hours(): bool
+    {
         $diff = $this->creationDate->diff($this->bookingDateTime);
         $hours = $diff->h;
         $hours = $hours + ($diff->days*24);

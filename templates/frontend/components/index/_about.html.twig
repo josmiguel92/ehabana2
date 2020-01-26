@@ -12,9 +12,9 @@
             <div class="col-md-6 pl-md-5 pl-xl-0 offset-xl-1 col-xl-5">
                 <div class="section-intro mb-lg-4">
                     <h4 class="intro-title">{% trans %}about.title{% endtrans %}</h4>
-                    <h2>{% trans %}about.subtitle{% endtrans %}</h2>
+                    <h2>{{ text.sobreNosotrosTitulo(_locale)}}</h2>
                 </div>
-                <p>{% trans %}about.text{% endtrans %}</p>
+                <p>{{ text.sobreNosotrosTexto(_locale) }}</p>
                 <a class="button button-shadow mt-2 mt-lg-4" href="#booking">{% trans %}cta.book_now{% endtrans %}</a>
             </div>
         </div>

@@ -1,21 +1,21 @@
 
-  <!--================Reservation section start =================-->  
+  <!--================Reservation section start =================-->
   <section class="bg-lightGray section-padding">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 col-xl-5 mb-4 mb-md-0">
           <div class="section-intro">
             <h4 class="intro-title">{% trans %}book.title{% endtrans %}</h4>
-            <h2 class="mb-3">{% trans %}book.subtitle{% endtrans %}</h2>
+            <h2 class="mb-3">{{ text.reservaTitulo(_locale) }}</h2>
           </div>
-          <p>{% trans %}book.text{% endtrans %}</p>
+          <p>{{ text.reservaTexto(_locale) }}</p>
         </div>
-        
+
         <div class="col-md-6 offset-xl-2 col-xl-5">
           <div class="bookform-wrapper" style="background-image: url({{asset('img/home/reservation-bg.png')}})">
             <h3>{% trans %}book.form.book_table{% endtrans %}</h3>
             {{ form_start(form, {'attr':{'class': 'bookform-form' } }) }}
-            
+
               <div class="form-group">
                 <div class="input-group">
                   <input type="text" name="{{ form.clientName.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.name{% endtrans %}" required>
@@ -44,7 +44,7 @@
               <div class="row datetime-inputs">
                 <div class="form-group col-md-6">
                     <div class="input-group">
-                      <input type="date" name="{{ form.bookingDate.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.select_date{% endtrans %}" 
+                      <input type="date" name="{{ form.bookingDate.vars.full_name }}" class="form-control" placeholder="{% trans %}book.form.select_date{% endtrans %}"
                       min="{{ 'now + 12 hours' | date('Y-m-d') }}" max="{{ 'today + 45 days' | date('Y-m-d') }}"  required>
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="ti-notepad"></i></span>
@@ -60,7 +60,7 @@
                     </div>
                   </div>
               </div>
-              
+
 
               <div class="form-group">
                 <div class="input-group">
@@ -94,4 +94,4 @@
       </div>
     </div>
   </section>
-  <!--================Reservation section end =================-->  
+  <!--================Reservation section end =================-->
