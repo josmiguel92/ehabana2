@@ -31,10 +31,12 @@
         <div class="hero-right">
             <div class="owl-carousel owl-theme hero-carousel">
 
+
               {% for image in images %}
             	  <div class="hero-carousel-item animated-img-container">
                     <img class="img-fluid" src="{{ asset(image.imagePath)}}" alt="" style="max-height: 85vh;width: auto;">
                     <a class="button button-hero button-shadow" href="{{ asset(image.imagePath)}}">+</a>
+
                 </div>
               {% endfor %}
 
